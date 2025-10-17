@@ -64,8 +64,8 @@
         {
             if (palavra == palavraSorteada)
                 JogoFinalizado = true;
-            if (palavra.Length != 5)
-                throw new Exception("Palavra com tamanho incorreto!");
+            if (palavra.Length != 5) return;
+                //throw new Exception("Palavra com tamanho incorreto!");
 
             // Adicionando palavra na matriz do tabuleiro
             var palavraTabuleiro = new List<Letra>();

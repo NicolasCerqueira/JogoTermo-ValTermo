@@ -1,3 +1,5 @@
+using System;
+using System.Security.Cryptography.Xml;
 using TermoLib;
 using static System.Windows.Forms.LinkLabel;
 
@@ -8,6 +10,7 @@ namespace TermoApp
         public Termo termo;
         int coluna = 1;
         int coluna2;
+        int tentativas = 6;
 
         public FormJogo()
         {
@@ -17,7 +20,7 @@ namespace TermoApp
 
         private void btnTeclado_Click(object sender, EventArgs e)
         {
-            if (coluna > 5) return;
+            if (coluna > 5 || termo.palavraAtual > tentativas) return;
             // Botão do Teclado que foi clicado
             var button = (Button)sender;
             var linha = termo.palavraAtual;
@@ -57,7 +60,7 @@ namespace TermoApp
         private void btnBack_Click(object sender, EventArgs e)
         {
 
-            if (coluna <= 1) return;
+            if (coluna < 6 || termo.palavraAtual < 6) return;
 
             if (coluna <= 5)
             {
@@ -87,7 +90,7 @@ namespace TermoApp
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-
+            if (termo.palavraAtual > 6 ||termo.palavraAtual > tentativas) return;
             var palavra = string.Empty;
             for (int i = 1; i <= 5; i++)
             {
@@ -103,13 +106,19 @@ namespace TermoApp
                 MessageBox.Show("Parabéns, Palavra Correta!",
                             "Jogo termo", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
+
             }
 
             //muda o indicador da letra que esta sendo editada
-            var linha = termo.palavraAtual;
-            var nomeButton = $"btn{linha}{1}";
-            var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Silver;
+            if (termo.palavraAtual < 6)
+            {
+                var linha = termo.palavraAtual;
+                var nomeButton = $"btn{linha}{1}";
+                var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
+                buttonTabuleiro.BackColor = Color.Silver;
+                dicaValtao();
+                for (int i = 0; i <=3; i++) Valt_Click(sender, e);
+            }
         }
 
         private Button RetornaBotao(string name)
@@ -167,30 +176,31 @@ namespace TermoApp
         private void btnColuna1_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(1);
+            Valt_Click(sender, e);
         }
 
         private void btnColuna2_Click(object sender, EventArgs e)
         {
-            //coluna = 2;
             atualizaCorParaBtnColuna(2);
+            Valt_Click(sender, e);
         }
 
         private void btnColuna3_Click(object sender, EventArgs e)
         {
-            //coluna = 3;
             atualizaCorParaBtnColuna(3);
+            Valt_Click(sender, e);
         }
 
         private void btnColuna4_Click(object sender, EventArgs e)
         {
-            //coluna = 4;
             atualizaCorParaBtnColuna(4);
+            Valt_Click(sender, e);
         }
 
         private void btnColuna5_Click(object sender, EventArgs e)
         {
-            //coluna = 5;
             atualizaCorParaBtnColuna(5);
+            Valt_Click(sender, e);
         }
 
         private void btnReiniciar_Click(object sender, EventArgs e) //terminar essa runção, falta reiniciar o teclado
@@ -217,6 +227,12 @@ namespace TermoApp
             }
             btn11.BackColor = Color.Silver;
             termo.reiniciaJogo();
+            dicaValtao();
+            btn61.Enabled = true;
+            btn62.Enabled = true;
+            btn63.Enabled = true;
+            btn64.Enabled = true;
+            btn65.Enabled = true;
         }
 
         private void FormJogo_KeyPress(object sender, KeyPressEventArgs e)
@@ -254,6 +270,99 @@ namespace TermoApp
                 e.Handled = true;
                 btnEnter.PerformClick();
             }
+        }
+
+        private void FormJogo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dicaValtao()
+        {
+            if (termo.palavraAtual == 2)
+            {
+                pictureBox1.Visible = true;
+                pictureBox1.Image = Properties.Resources.MuitoFeliz;
+                labelValt.Visible = true;
+                aceitarDica.Visible = true;
+                negarDica.Visible = true;
+            }
+            else
+            {
+                pictureBox1.Visible = false;
+                labelValt.Visible = false;
+                aceitarDica.Visible = false;
+                negarDica.Visible = false;
+            }
+        }
+
+        private void aceitarDica_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Eu sei que você usa break no código,\n" +
+                "vai ficar sem dica e perdeu uma tentativa",
+                            "Valtão ta na maldade", MessageBoxButtons.OK,
+                            MessageBoxIcon.Exclamation);
+            dicaValtao();
+            tentativas--;
+            btn61.Enabled = false;
+            btn62.Enabled = false;
+            btn63.Enabled = false;
+            btn64.Enabled = false;
+            btn65.Enabled = false;
+            for (int i = 0; i <= 3; i++) Valt_Click(sender, e);
+            tentativas--;
+            btn61.Text = "B";
+            btn62.Text = "R";
+            btn63.Text = "E";
+            btn64.Text = "A";
+            btn65.Text = "K";
+
+        }
+
+        private void negarDica_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = false;
+            labelValt.Visible = false;
+            aceitarDica.Visible = false;
+            negarDica.Visible = false;
+        }
+
+        private void Valt_Click(object sender, EventArgs e)
+        {
+            Label labelValt = new Label();
+            labelValt.Font = new Font("MS Reference Sans Serif", 15.75f, FontStyle.Bold);
+            labelValt.Text = fraseValt();
+            labelValt.AutoSize = true;
+
+            this.Controls.Add(labelValt);
+
+            Random random = new Random();
+            int newX = random.Next(0, this.ClientSize.Width - labelValt.Width);
+            int newY = random.Next(0, this.ClientSize.Height - labelValt.Height);
+
+            labelValt.Location = new Point(newX, newY);
+            
+        }
+
+        private string fraseValt()
+        {
+            string frase = "";
+            Random random = new Random();
+            int numAleatorio = random.Next(1, 7);
+            if (numAleatorio == 1) frase = "if(finalizado == true) {BREAK;}";
+            if (numAleatorio == 2) frase = "if(ValtãoFeliz == true) {RETURN;}";
+            if (numAleatorio == 3) frase = "var novaVariavelGlobal";
+            if (numAleatorio == 4) frase = "Seu código é desestruturado";
+            if (numAleatorio == 5) frase = "Cade a intentação desse código?";
+            if (numAleatorio == 6) frase = "Você não sabe conceito basico";
+            if (numAleatorio == 7) frase = "while(true) {if() return;}";
+
+            return frase;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
