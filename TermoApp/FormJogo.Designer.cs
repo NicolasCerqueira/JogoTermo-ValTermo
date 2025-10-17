@@ -94,7 +94,8 @@ partial class FormJogo
         labelValt = new Label();
         aceitarDica = new Button();
         negarDica = new Button();
-        radioButton1 = new RadioButton();
+        ouvirMusica = new RadioButton();
+        desligarMusica = new RadioButton();
         gpbJogo.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         jpbTeclado.SuspendLayout();
@@ -914,18 +915,30 @@ partial class FormJogo
         negarDica.Visible = false;
         negarDica.Click += negarDica_Click;
         // 
-        // radioButton1
+        // ouvirMusica
         // 
-        radioButton1.AutoSize = true;
-        radioButton1.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        radioButton1.Location = new Point(1519, 27);
-        radioButton1.Name = "radioButton1";
-        radioButton1.Size = new Size(152, 28);
-        radioButton1.TabIndex = 8;
-        radioButton1.TabStop = true;
-        radioButton1.Text = "Ouvir Musica";
-        radioButton1.UseVisualStyleBackColor = true;
-        radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+        ouvirMusica.AutoSize = true;
+        ouvirMusica.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        ouvirMusica.Location = new Point(1397, 27);
+        ouvirMusica.Name = "ouvirMusica";
+        ouvirMusica.Size = new Size(152, 28);
+        ouvirMusica.TabIndex = 8;
+        ouvirMusica.TabStop = true;
+        ouvirMusica.Text = "Ouvir Musica";
+        ouvirMusica.UseVisualStyleBackColor = true;
+        ouvirMusica.CheckedChanged += radioButton1_CheckedChanged;
+        // 
+        // desligarMusica
+        // 
+        desligarMusica.AutoSize = true;
+        desligarMusica.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        desligarMusica.Location = new Point(1601, 27);
+        desligarMusica.Name = "desligarMusica";
+        desligarMusica.Size = new Size(179, 28);
+        desligarMusica.TabIndex = 9;
+        desligarMusica.TabStop = true;
+        desligarMusica.Text = "Desligar Musica";
+        desligarMusica.UseVisualStyleBackColor = true;
         // 
         // FormJogo
         // 
@@ -933,7 +946,8 @@ partial class FormJogo
         AutoScaleMode = AutoScaleMode.Font;
         BackgroundImageLayout = ImageLayout.Stretch;
         ClientSize = new Size(1904, 1041);
-        Controls.Add(radioButton1);
+        Controls.Add(desligarMusica);
+        Controls.Add(ouvirMusica);
         Controls.Add(negarDica);
         Controls.Add(aceitarDica);
         Controls.Add(labelValt);
@@ -1027,5 +1041,6 @@ partial class FormJogo
     private Label labelValt;
     private Button aceitarDica;
     private Button negarDica;
-    private RadioButton radioButton1;
+    private RadioButton ouvirMusica;
+    private RadioButton desligarMusica;
 }

@@ -60,7 +60,7 @@ namespace TermoApp
         private void btnBack_Click(object sender, EventArgs e)
         {
 
-            if (coluna < 6 || termo.palavraAtual < 6) return;
+            if (coluna <= 1) return;
 
             if (coluna <= 5)
             {
@@ -177,30 +177,35 @@ namespace TermoApp
         {
             atualizaCorParaBtnColuna(1);
             Valt_Click(sender, e);
+            btnEnter.Focus();
         }
 
         private void btnColuna2_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(2);
             Valt_Click(sender, e);
+            btnEnter.Focus();
         }
 
         private void btnColuna3_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(3);
             Valt_Click(sender, e);
+            btnEnter.Focus();
         }
 
         private void btnColuna4_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(4);
             Valt_Click(sender, e);
+            btnEnter.Focus();
         }
 
         private void btnColuna5_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(5);
             Valt_Click(sender, e);
+            btnEnter.Focus();
         }
 
         private void btnReiniciar_Click(object sender, EventArgs e) //terminar essa runção, falta reiniciar o teclado
