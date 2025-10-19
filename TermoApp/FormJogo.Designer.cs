@@ -101,7 +101,6 @@ partial class FormJogo
         musica3 = new RadioButton();
         musica4 = new RadioButton();
         ouvirMusic = new CheckBox();
-        DesligarMusic = new CheckBox();
         gpbJogo.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         jpbTeclado.SuspendLayout();
@@ -1057,10 +1056,10 @@ partial class FormJogo
         // videoView1
         // 
         videoView1.BackColor = Color.Gray;
-        videoView1.Location = new Point(1366, 168);
+        videoView1.Location = new Point(1366, 127);
         videoView1.MediaPlayer = null;
         videoView1.Name = "videoView1";
-        videoView1.Size = new Size(440, 632);
+        videoView1.Size = new Size(440, 673);
         videoView1.TabIndex = 10;
         videoView1.Text = "videoView1";
         videoView1.Visible = false;
@@ -1069,7 +1068,7 @@ partial class FormJogo
         // 
         musica1.AutoSize = true;
         musica1.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica1.Location = new Point(1348, 78);
+        musica1.Location = new Point(1348, 59);
         musica1.Name = "musica1";
         musica1.Size = new Size(144, 28);
         musica1.TabIndex = 11;
@@ -1082,7 +1081,7 @@ partial class FormJogo
         // 
         musica2.AutoSize = true;
         musica2.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica2.Location = new Point(1507, 77);
+        musica2.Location = new Point(1507, 59);
         musica2.Name = "musica2";
         musica2.Size = new Size(315, 28);
         musica2.TabIndex = 12;
@@ -1095,7 +1094,7 @@ partial class FormJogo
         // 
         musica3.AutoSize = true;
         musica3.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica3.Location = new Point(1348, 124);
+        musica3.Location = new Point(1348, 93);
         musica3.Name = "musica3";
         musica3.Size = new Size(206, 28);
         musica3.TabIndex = 13;
@@ -1108,7 +1107,7 @@ partial class FormJogo
         // 
         musica4.AutoSize = true;
         musica4.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica4.Location = new Point(1631, 124);
+        musica4.Location = new Point(1631, 93);
         musica4.Name = "musica4";
         musica4.Size = new Size(191, 28);
         musica4.TabIndex = 14;
@@ -1123,31 +1122,15 @@ partial class FormJogo
         ouvirMusic.Font = new Font("Sans Serif Collection", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
         ouvirMusic.Image = Properties.Resources.IconeBotaoMusica32x32;
         ouvirMusic.ImageAlign = ContentAlignment.TopLeft;
-        ouvirMusic.Location = new Point(1386, 12);
+        ouvirMusic.Location = new Point(1507, 12);
         ouvirMusic.Name = "ouvirMusic";
-        ouvirMusic.Size = new Size(168, 46);
+        ouvirMusic.Size = new Size(184, 46);
         ouvirMusic.TabIndex = 15;
         ouvirMusic.Text = "  Ouvir musica";
         ouvirMusic.TextImageRelation = TextImageRelation.ImageBeforeText;
         ouvirMusic.UseVisualStyleBackColor = true;
         ouvirMusic.UseWaitCursor = true;
-        ouvirMusic.CheckedChanged += ouvirMusica_Click;
-        // 
-        // DesligarMusic
-        // 
-        DesligarMusic.Appearance = Appearance.Button;
-        DesligarMusic.Font = new Font("Sans Serif Collection", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        DesligarMusic.Image = Properties.Resources.IconeBotaoMusica32x32;
-        DesligarMusic.ImageAlign = ContentAlignment.TopLeft;
-        DesligarMusic.Location = new Point(1615, 12);
-        DesligarMusic.Name = "DesligarMusic";
-        DesligarMusic.Size = new Size(184, 46);
-        DesligarMusic.TabIndex = 16;
-        DesligarMusic.Text = " Desligar musica";
-        DesligarMusic.TextImageRelation = TextImageRelation.ImageBeforeText;
-        DesligarMusic.UseVisualStyleBackColor = true;
-        DesligarMusic.UseWaitCursor = true;
-        DesligarMusic.CheckedChanged += desligarMusica_Click;
+        ouvirMusic.CheckedChanged += Musica_Click;
         // 
         // FormJogo
         // 
@@ -1155,7 +1138,6 @@ partial class FormJogo
         AutoScaleMode = AutoScaleMode.Font;
         BackgroundImageLayout = ImageLayout.Stretch;
         ClientSize = new Size(1904, 1041);
-        Controls.Add(DesligarMusic);
         Controls.Add(ouvirMusic);
         Controls.Add(musica4);
         Controls.Add(musica3);
@@ -1262,5 +1244,4 @@ partial class FormJogo
     private RadioButton musica3;
     private RadioButton musica4;
     private CheckBox ouvirMusic;
-    private CheckBox DesligarMusic;
 }

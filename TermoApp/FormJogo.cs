@@ -487,30 +487,32 @@ namespace TermoApp
             }
         }
 
-        private void ouvirMusica_Click(object sender, EventArgs e)
+        private void Musica_Click(object sender, EventArgs e)
         {
-            videoView1.Visible = true;
-            musica1.Visible = true;
-            musica2.Visible = true;
-            musica3.Visible = true;
-            musica4.Visible = true;
-            DesligarMusic.Checked = false;
-        }
-
-        private void desligarMusica_Click(object sender, EventArgs e)
-        {
-            _mediaPlayer.Play();
-            videoView1.Visible = false;
-            musica1.Visible = false;
-            musica2.Visible = false;
-            musica3.Visible = false;
-            musica4.Visible = false;
-            ouvirMusic.Checked = false;
-            musica1.Checked = false;
-            musica2.Checked = false;
-            musica3.Checked = false;
-            musica4.Checked = false;
-            _mediaPlayer.Stop();
+            if (ouvirMusic.Checked == true)
+            {
+                videoView1.Visible = true;
+                musica1.Visible = true;
+                musica2.Visible = true;
+                musica3.Visible = true;
+                musica4.Visible = true;
+                ouvirMusic.Text = "Desligar musica";
+            } else
+            {
+                _mediaPlayer.Play();
+                videoView1.Visible = false;
+                musica1.Visible = false;
+                musica2.Visible = false;
+                musica3.Visible = false;
+                musica4.Visible = false;
+                ouvirMusic.Checked = false;
+                musica1.Checked = false;
+                musica2.Checked = false;
+                musica3.Checked = false;
+                musica4.Checked = false;
+                _mediaPlayer.Stop();
+                ouvirMusic.Text = "Ouvir musica";
+            }
         }
         private void playVideo(string caminhoVideo)
         {
