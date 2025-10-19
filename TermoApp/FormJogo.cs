@@ -216,7 +216,7 @@ namespace TermoApp
                 var nomeButton = $"btn{linha}{1}";
                 var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
                 buttonTabuleiro.BackColor = Color.Silver;
-                dicaValtao();
+                //dicaValtao();
                 for (int i = 0; i <= 3; i++) Valt_Click(sender, e);
             }
         }
@@ -326,7 +326,7 @@ namespace TermoApp
             }
             btn11.BackColor = Color.Silver;
             termo.reiniciaJogo();
-            dicaValtao();
+            //dicaValtao();
             tentativas = 6;
             btn61.Enabled = true;
             btn62.Enabled = true;
@@ -366,7 +366,7 @@ namespace TermoApp
             }
         }
 
-        private void dicaValtao()
+        private void dicaValtao()//atualmente sem uso
         {
             if (termo.palavraAtual == 2)
             {
@@ -391,7 +391,7 @@ namespace TermoApp
                             "vai ficar sem dica e perdeu uma tentativa",
                             "Valtão ta na maldade", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
-            dicaValtao();
+            //dicaValtao();
             tentativas--;
             btn61.Enabled = false;
             btn62.Enabled = false;
@@ -404,6 +404,11 @@ namespace TermoApp
             btn63.Text = "E";
             btn64.Text = "A";
             btn65.Text = "K";
+
+            pictureBox1.Visible = false;
+            labelValt.Visible = false;
+            aceitarDica.Visible = false;
+            negarDica.Visible = false;
 
         }
 
@@ -497,7 +502,8 @@ namespace TermoApp
                 musica3.Visible = true;
                 musica4.Visible = true;
                 ouvirMusic.Text = "Desligar musica";
-            } else
+            }
+            else
             {
                 _mediaPlayer.Play();
                 videoView1.Visible = false;
@@ -540,6 +546,24 @@ namespace TermoApp
         private void musica4_CheckedChanged(object sender, EventArgs e)
         {
             playVideo(@"C:\Users\Nicolas Cerqueira\Documents\IFSP 6° semestre 2-2025\Programação orientada a eventos\JogoTermo\JogoTermo\TermoApp\Resources\Talvez seja amor.mp4");
+        }
+
+        private void dica_Click(object sender, EventArgs e)
+        {
+            int pos = 0;
+            pos = termo.palavraAtual;
+            
+                pictureBox1.Visible = true;
+                pictureBox1.Image = Properties.Resources.MuitoFeliz;
+                labelValt.Visible = true;
+                aceitarDica.Visible = true;
+                negarDica.Visible = true;
+
+                //pictureBox1.Visible = false;
+                //labelValt.Visible = false;
+                //aceitarDica.Visible = false;
+                //negarDica.Visible = false;
+            
         }
     }
 }

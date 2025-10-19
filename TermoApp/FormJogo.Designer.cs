@@ -101,6 +101,7 @@ partial class FormJogo
         musica3 = new RadioButton();
         musica4 = new RadioButton();
         ouvirMusic = new CheckBox();
+        dica = new Button();
         gpbJogo.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         jpbTeclado.SuspendLayout();
@@ -540,7 +541,7 @@ partial class FormJogo
         // pictureBox1
         // 
         pictureBox1.InitialImage = null;
-        pictureBox1.Location = new Point(91, 77);
+        pictureBox1.Location = new Point(91, 93);
         pictureBox1.Name = "pictureBox1";
         pictureBox1.Size = new Size(540, 330);
         pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -1020,7 +1021,7 @@ partial class FormJogo
         // 
         labelValt.AutoSize = true;
         labelValt.Font = new Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        labelValt.Location = new Point(91, 45);
+        labelValt.Location = new Point(91, 57);
         labelValt.Name = "labelValt";
         labelValt.Size = new Size(580, 29);
         labelValt.TabIndex = 5;
@@ -1032,7 +1033,7 @@ partial class FormJogo
         // aceitarDica
         // 
         aceitarDica.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        aceitarDica.Location = new Point(132, 421);
+        aceitarDica.Location = new Point(132, 429);
         aceitarDica.Name = "aceitarDica";
         aceitarDica.Size = new Size(204, 63);
         aceitarDica.TabIndex = 6;
@@ -1044,7 +1045,7 @@ partial class FormJogo
         // negarDica
         // 
         negarDica.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        negarDica.Location = new Point(384, 421);
+        negarDica.Location = new Point(384, 429);
         negarDica.Name = "negarDica";
         negarDica.Size = new Size(204, 63);
         negarDica.TabIndex = 7;
@@ -1132,12 +1133,25 @@ partial class FormJogo
         ouvirMusic.UseWaitCursor = true;
         ouvirMusic.CheckedChanged += Musica_Click;
         // 
+        // dica
+        // 
+        dica.BackColor = Color.DarkGray;
+        dica.BackgroundImage = Properties.Resources.dicaValt;
+        dica.BackgroundImageLayout = ImageLayout.Center;
+        dica.Location = new Point(12, 12);
+        dica.Name = "dica";
+        dica.Size = new Size(53, 46);
+        dica.TabIndex = 16;
+        dica.UseVisualStyleBackColor = false;
+        dica.Click += dica_Click;
+        // 
         // FormJogo
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackgroundImageLayout = ImageLayout.Stretch;
         ClientSize = new Size(1904, 1041);
+        Controls.Add(dica);
         Controls.Add(ouvirMusic);
         Controls.Add(musica4);
         Controls.Add(musica3);
@@ -1244,4 +1258,5 @@ partial class FormJogo
     private RadioButton musica3;
     private RadioButton musica4;
     private CheckBox ouvirMusic;
+    private Button dica;
 }
