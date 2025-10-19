@@ -61,6 +61,7 @@ partial class FormJogo
         btn11 = new Button();
         pictureBox1 = new PictureBox();
         jpbTeclado = new GroupBox();
+        ModoClaroEscuro = new Button();
         btnEnter = new Button();
         btnM = new Button();
         btnN = new Button();
@@ -96,9 +97,11 @@ partial class FormJogo
         negarDica = new Button();
         ouvirMusica = new RadioButton();
         desligarMusica = new RadioButton();
+        videoView1 = new LibVLCSharp.WinForms.VideoView();
         gpbJogo.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         jpbTeclado.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)videoView1).BeginInit();
         SuspendLayout();
         // 
         // gpbJogo
@@ -144,6 +147,8 @@ partial class FormJogo
         // btn65
         // 
         btn65.BackColor = Color.White;
+        btn65.FlatAppearance.BorderSize = 0;
+        btn65.FlatStyle = FlatStyle.Flat;
         btn65.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn65.Location = new Point(350, 452);
         btn65.Name = "btn65";
@@ -155,6 +160,8 @@ partial class FormJogo
         // btn64
         // 
         btn64.BackColor = Color.White;
+        btn64.FlatAppearance.BorderSize = 0;
+        btn64.FlatStyle = FlatStyle.Flat;
         btn64.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn64.Location = new Point(264, 452);
         btn64.Name = "btn64";
@@ -166,6 +173,8 @@ partial class FormJogo
         // btn63
         // 
         btn63.BackColor = Color.White;
+        btn63.FlatAppearance.BorderSize = 0;
+        btn63.FlatStyle = FlatStyle.Flat;
         btn63.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn63.Location = new Point(178, 452);
         btn63.Name = "btn63";
@@ -177,6 +186,8 @@ partial class FormJogo
         // btn62
         // 
         btn62.BackColor = Color.White;
+        btn62.FlatAppearance.BorderSize = 0;
+        btn62.FlatStyle = FlatStyle.Flat;
         btn62.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn62.Location = new Point(92, 452);
         btn62.Name = "btn62";
@@ -188,6 +199,8 @@ partial class FormJogo
         // btn61
         // 
         btn61.BackColor = Color.White;
+        btn61.FlatAppearance.BorderSize = 0;
+        btn61.FlatStyle = FlatStyle.Flat;
         btn61.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn61.Location = new Point(6, 452);
         btn61.Name = "btn61";
@@ -199,6 +212,8 @@ partial class FormJogo
         // btn55
         // 
         btn55.BackColor = Color.White;
+        btn55.FlatAppearance.BorderSize = 0;
+        btn55.FlatStyle = FlatStyle.Flat;
         btn55.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn55.Location = new Point(350, 366);
         btn55.Name = "btn55";
@@ -210,6 +225,8 @@ partial class FormJogo
         // btn54
         // 
         btn54.BackColor = Color.White;
+        btn54.FlatAppearance.BorderSize = 0;
+        btn54.FlatStyle = FlatStyle.Flat;
         btn54.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn54.Location = new Point(264, 366);
         btn54.Name = "btn54";
@@ -221,6 +238,8 @@ partial class FormJogo
         // btn53
         // 
         btn53.BackColor = Color.White;
+        btn53.FlatAppearance.BorderSize = 0;
+        btn53.FlatStyle = FlatStyle.Flat;
         btn53.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn53.Location = new Point(178, 366);
         btn53.Name = "btn53";
@@ -232,6 +251,8 @@ partial class FormJogo
         // btn52
         // 
         btn52.BackColor = Color.White;
+        btn52.FlatAppearance.BorderSize = 0;
+        btn52.FlatStyle = FlatStyle.Flat;
         btn52.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn52.Location = new Point(92, 366);
         btn52.Name = "btn52";
@@ -243,6 +264,8 @@ partial class FormJogo
         // btn51
         // 
         btn51.BackColor = Color.White;
+        btn51.FlatAppearance.BorderSize = 0;
+        btn51.FlatStyle = FlatStyle.Flat;
         btn51.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn51.Location = new Point(6, 366);
         btn51.Name = "btn51";
@@ -254,6 +277,8 @@ partial class FormJogo
         // btn45
         // 
         btn45.BackColor = Color.White;
+        btn45.FlatAppearance.BorderSize = 0;
+        btn45.FlatStyle = FlatStyle.Flat;
         btn45.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn45.Location = new Point(350, 280);
         btn45.Name = "btn45";
@@ -265,6 +290,8 @@ partial class FormJogo
         // btn44
         // 
         btn44.BackColor = Color.White;
+        btn44.FlatAppearance.BorderSize = 0;
+        btn44.FlatStyle = FlatStyle.Flat;
         btn44.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn44.Location = new Point(264, 280);
         btn44.Name = "btn44";
@@ -276,6 +303,8 @@ partial class FormJogo
         // btn43
         // 
         btn43.BackColor = Color.White;
+        btn43.FlatAppearance.BorderSize = 0;
+        btn43.FlatStyle = FlatStyle.Flat;
         btn43.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn43.Location = new Point(178, 280);
         btn43.Name = "btn43";
@@ -287,6 +316,8 @@ partial class FormJogo
         // btn42
         // 
         btn42.BackColor = Color.White;
+        btn42.FlatAppearance.BorderSize = 0;
+        btn42.FlatStyle = FlatStyle.Flat;
         btn42.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn42.Location = new Point(92, 280);
         btn42.Name = "btn42";
@@ -298,6 +329,8 @@ partial class FormJogo
         // btn41
         // 
         btn41.BackColor = Color.White;
+        btn41.FlatAppearance.BorderSize = 0;
+        btn41.FlatStyle = FlatStyle.Flat;
         btn41.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn41.Location = new Point(6, 280);
         btn41.Name = "btn41";
@@ -309,6 +342,8 @@ partial class FormJogo
         // btn35
         // 
         btn35.BackColor = Color.White;
+        btn35.FlatAppearance.BorderSize = 0;
+        btn35.FlatStyle = FlatStyle.Flat;
         btn35.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn35.Location = new Point(350, 194);
         btn35.Name = "btn35";
@@ -320,6 +355,8 @@ partial class FormJogo
         // btn34
         // 
         btn34.BackColor = Color.White;
+        btn34.FlatAppearance.BorderSize = 0;
+        btn34.FlatStyle = FlatStyle.Flat;
         btn34.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn34.Location = new Point(264, 194);
         btn34.Name = "btn34";
@@ -331,6 +368,8 @@ partial class FormJogo
         // btn33
         // 
         btn33.BackColor = Color.White;
+        btn33.FlatAppearance.BorderSize = 0;
+        btn33.FlatStyle = FlatStyle.Flat;
         btn33.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn33.Location = new Point(178, 194);
         btn33.Name = "btn33";
@@ -342,6 +381,8 @@ partial class FormJogo
         // btn32
         // 
         btn32.BackColor = Color.White;
+        btn32.FlatAppearance.BorderSize = 0;
+        btn32.FlatStyle = FlatStyle.Flat;
         btn32.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn32.Location = new Point(92, 194);
         btn32.Name = "btn32";
@@ -353,6 +394,8 @@ partial class FormJogo
         // btn31
         // 
         btn31.BackColor = Color.White;
+        btn31.FlatAppearance.BorderSize = 0;
+        btn31.FlatStyle = FlatStyle.Flat;
         btn31.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn31.Location = new Point(6, 194);
         btn31.Name = "btn31";
@@ -364,6 +407,8 @@ partial class FormJogo
         // btn25
         // 
         btn25.BackColor = Color.White;
+        btn25.FlatAppearance.BorderSize = 0;
+        btn25.FlatStyle = FlatStyle.Flat;
         btn25.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn25.Location = new Point(350, 108);
         btn25.Name = "btn25";
@@ -375,6 +420,8 @@ partial class FormJogo
         // btn24
         // 
         btn24.BackColor = Color.White;
+        btn24.FlatAppearance.BorderSize = 0;
+        btn24.FlatStyle = FlatStyle.Flat;
         btn24.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn24.Location = new Point(264, 108);
         btn24.Name = "btn24";
@@ -386,6 +433,8 @@ partial class FormJogo
         // btn23
         // 
         btn23.BackColor = Color.White;
+        btn23.FlatAppearance.BorderSize = 0;
+        btn23.FlatStyle = FlatStyle.Flat;
         btn23.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn23.Location = new Point(178, 108);
         btn23.Name = "btn23";
@@ -397,6 +446,8 @@ partial class FormJogo
         // btn22
         // 
         btn22.BackColor = Color.White;
+        btn22.FlatAppearance.BorderSize = 0;
+        btn22.FlatStyle = FlatStyle.Flat;
         btn22.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn22.Location = new Point(92, 108);
         btn22.Name = "btn22";
@@ -408,6 +459,8 @@ partial class FormJogo
         // btn21
         // 
         btn21.BackColor = Color.White;
+        btn21.FlatAppearance.BorderSize = 0;
+        btn21.FlatStyle = FlatStyle.Flat;
         btn21.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn21.Location = new Point(6, 108);
         btn21.Name = "btn21";
@@ -419,6 +472,8 @@ partial class FormJogo
         // btn15
         // 
         btn15.BackColor = Color.White;
+        btn15.FlatAppearance.BorderSize = 0;
+        btn15.FlatStyle = FlatStyle.Flat;
         btn15.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn15.Location = new Point(350, 22);
         btn15.Name = "btn15";
@@ -430,6 +485,8 @@ partial class FormJogo
         // btn14
         // 
         btn14.BackColor = Color.White;
+        btn14.FlatAppearance.BorderSize = 0;
+        btn14.FlatStyle = FlatStyle.Flat;
         btn14.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn14.Location = new Point(264, 22);
         btn14.Name = "btn14";
@@ -441,6 +498,8 @@ partial class FormJogo
         // btn13
         // 
         btn13.BackColor = Color.White;
+        btn13.FlatAppearance.BorderSize = 0;
+        btn13.FlatStyle = FlatStyle.Flat;
         btn13.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn13.Location = new Point(178, 22);
         btn13.Name = "btn13";
@@ -452,6 +511,8 @@ partial class FormJogo
         // btn12
         // 
         btn12.BackColor = Color.White;
+        btn12.FlatAppearance.BorderSize = 0;
+        btn12.FlatStyle = FlatStyle.Flat;
         btn12.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn12.Location = new Point(92, 22);
         btn12.Name = "btn12";
@@ -463,6 +524,8 @@ partial class FormJogo
         // btn11
         // 
         btn11.BackColor = Color.Silver;
+        btn11.FlatAppearance.BorderSize = 0;
+        btn11.FlatStyle = FlatStyle.Flat;
         btn11.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btn11.Location = new Point(6, 22);
         btn11.Name = "btn11";
@@ -485,6 +548,7 @@ partial class FormJogo
         // jpbTeclado
         // 
         jpbTeclado.BackColor = Color.Transparent;
+        jpbTeclado.Controls.Add(ModoClaroEscuro);
         jpbTeclado.Controls.Add(btnEnter);
         jpbTeclado.Controls.Add(btnM);
         jpbTeclado.Controls.Add(btnN);
@@ -520,9 +584,24 @@ partial class FormJogo
         jpbTeclado.TabStop = false;
         jpbTeclado.Text = "Teclado";
         // 
+        // ModoClaroEscuro
+        // 
+        ModoClaroEscuro.BackColor = Color.Transparent;
+        ModoClaroEscuro.BackgroundImage = Properties.Resources.IconeModoClaroEscuro;
+        ModoClaroEscuro.BackgroundImageLayout = ImageLayout.Stretch;
+        ModoClaroEscuro.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        ModoClaroEscuro.Location = new Point(18, 151);
+        ModoClaroEscuro.Name = "ModoClaroEscuro";
+        ModoClaroEscuro.Size = new Size(80, 60);
+        ModoClaroEscuro.TabIndex = 28;
+        ModoClaroEscuro.UseVisualStyleBackColor = false;
+        ModoClaroEscuro.Click += Button_Chance_Click;
+        // 
         // btnEnter
         // 
         btnEnter.BackColor = Color.Transparent;
+        btnEnter.FlatAppearance.BorderColor = Color.Silver;
+        btnEnter.FlatStyle = FlatStyle.Flat;
         btnEnter.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnEnter.Location = new Point(730, 151);
         btnEnter.Name = "btnEnter";
@@ -535,6 +614,8 @@ partial class FormJogo
         // btnM
         // 
         btnM.BackColor = Color.Transparent;
+        btnM.FlatAppearance.BorderColor = Color.Silver;
+        btnM.FlatStyle = FlatStyle.Flat;
         btnM.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnM.Location = new Point(644, 151);
         btnM.Name = "btnM";
@@ -547,6 +628,8 @@ partial class FormJogo
         // btnN
         // 
         btnN.BackColor = Color.Transparent;
+        btnN.FlatAppearance.BorderColor = Color.Silver;
+        btnN.FlatStyle = FlatStyle.Flat;
         btnN.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnN.Location = new Point(558, 151);
         btnN.Name = "btnN";
@@ -559,6 +642,8 @@ partial class FormJogo
         // btnB
         // 
         btnB.BackColor = Color.Transparent;
+        btnB.FlatAppearance.BorderColor = Color.Silver;
+        btnB.FlatStyle = FlatStyle.Flat;
         btnB.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnB.Location = new Point(472, 151);
         btnB.Name = "btnB";
@@ -571,6 +656,8 @@ partial class FormJogo
         // btnV
         // 
         btnV.BackColor = Color.Transparent;
+        btnV.FlatAppearance.BorderColor = Color.Silver;
+        btnV.FlatStyle = FlatStyle.Flat;
         btnV.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnV.Location = new Point(386, 151);
         btnV.Name = "btnV";
@@ -583,6 +670,8 @@ partial class FormJogo
         // btnC
         // 
         btnC.BackColor = Color.Transparent;
+        btnC.FlatAppearance.BorderColor = Color.Silver;
+        btnC.FlatStyle = FlatStyle.Flat;
         btnC.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnC.Location = new Point(301, 151);
         btnC.Name = "btnC";
@@ -595,6 +684,8 @@ partial class FormJogo
         // btnX
         // 
         btnX.BackColor = Color.Transparent;
+        btnX.FlatAppearance.BorderColor = Color.Silver;
+        btnX.FlatStyle = FlatStyle.Flat;
         btnX.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnX.Location = new Point(215, 151);
         btnX.Name = "btnX";
@@ -607,6 +698,8 @@ partial class FormJogo
         // btnZ
         // 
         btnZ.BackColor = Color.Transparent;
+        btnZ.FlatAppearance.BorderColor = Color.Silver;
+        btnZ.FlatStyle = FlatStyle.Flat;
         btnZ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnZ.Location = new Point(129, 151);
         btnZ.Name = "btnZ";
@@ -619,6 +712,8 @@ partial class FormJogo
         // backSpace
         // 
         backSpace.BackColor = Color.Transparent;
+        backSpace.FlatAppearance.BorderColor = Color.Silver;
+        backSpace.FlatStyle = FlatStyle.Flat;
         backSpace.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         backSpace.Location = new Point(847, 85);
         backSpace.Name = "backSpace";
@@ -631,6 +726,8 @@ partial class FormJogo
         // btnL
         // 
         btnL.BackColor = Color.Transparent;
+        btnL.FlatAppearance.BorderColor = Color.Silver;
+        btnL.FlatStyle = FlatStyle.Flat;
         btnL.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnL.Location = new Point(761, 85);
         btnL.Name = "btnL";
@@ -643,6 +740,8 @@ partial class FormJogo
         // btnK
         // 
         btnK.BackColor = Color.Transparent;
+        btnK.FlatAppearance.BorderColor = Color.Silver;
+        btnK.FlatStyle = FlatStyle.Flat;
         btnK.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnK.Location = new Point(675, 85);
         btnK.Name = "btnK";
@@ -655,6 +754,8 @@ partial class FormJogo
         // btnJ
         // 
         btnJ.BackColor = Color.Transparent;
+        btnJ.FlatAppearance.BorderColor = Color.Silver;
+        btnJ.FlatStyle = FlatStyle.Flat;
         btnJ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnJ.Location = new Point(589, 85);
         btnJ.Name = "btnJ";
@@ -667,6 +768,8 @@ partial class FormJogo
         // btnH
         // 
         btnH.BackColor = Color.Transparent;
+        btnH.FlatAppearance.BorderColor = Color.Silver;
+        btnH.FlatStyle = FlatStyle.Flat;
         btnH.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnH.Location = new Point(503, 85);
         btnH.Name = "btnH";
@@ -679,6 +782,8 @@ partial class FormJogo
         // btnG
         // 
         btnG.BackColor = Color.Transparent;
+        btnG.FlatAppearance.BorderColor = Color.Silver;
+        btnG.FlatStyle = FlatStyle.Flat;
         btnG.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnG.Location = new Point(417, 85);
         btnG.Name = "btnG";
@@ -691,6 +796,8 @@ partial class FormJogo
         // btnF
         // 
         btnF.BackColor = Color.Transparent;
+        btnF.FlatAppearance.BorderColor = Color.Silver;
+        btnF.FlatStyle = FlatStyle.Flat;
         btnF.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnF.Location = new Point(331, 85);
         btnF.Name = "btnF";
@@ -703,6 +810,8 @@ partial class FormJogo
         // btnD
         // 
         btnD.BackColor = Color.Transparent;
+        btnD.FlatAppearance.BorderColor = Color.Silver;
+        btnD.FlatStyle = FlatStyle.Flat;
         btnD.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnD.Location = new Point(245, 85);
         btnD.Name = "btnD";
@@ -715,6 +824,8 @@ partial class FormJogo
         // btnS
         // 
         btnS.BackColor = Color.Transparent;
+        btnS.FlatAppearance.BorderColor = Color.Silver;
+        btnS.FlatStyle = FlatStyle.Flat;
         btnS.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnS.Location = new Point(159, 85);
         btnS.Name = "btnS";
@@ -727,6 +838,8 @@ partial class FormJogo
         // btnA
         // 
         btnA.BackColor = Color.Transparent;
+        btnA.FlatAppearance.BorderColor = Color.Silver;
+        btnA.FlatStyle = FlatStyle.Flat;
         btnA.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnA.Location = new Point(73, 85);
         btnA.Name = "btnA";
@@ -739,6 +852,8 @@ partial class FormJogo
         // btnP
         // 
         btnP.BackColor = Color.Transparent;
+        btnP.FlatAppearance.BorderColor = Color.Silver;
+        btnP.FlatStyle = FlatStyle.Flat;
         btnP.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnP.Location = new Point(822, 19);
         btnP.Name = "btnP";
@@ -751,6 +866,8 @@ partial class FormJogo
         // btnO
         // 
         btnO.BackColor = Color.Transparent;
+        btnO.FlatAppearance.BorderColor = Color.Silver;
+        btnO.FlatStyle = FlatStyle.Flat;
         btnO.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnO.Location = new Point(736, 19);
         btnO.Name = "btnO";
@@ -763,6 +880,8 @@ partial class FormJogo
         // btnI
         // 
         btnI.BackColor = Color.Transparent;
+        btnI.FlatAppearance.BorderColor = Color.Silver;
+        btnI.FlatStyle = FlatStyle.Flat;
         btnI.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnI.Location = new Point(650, 19);
         btnI.Name = "btnI";
@@ -775,6 +894,8 @@ partial class FormJogo
         // btnU
         // 
         btnU.BackColor = Color.Transparent;
+        btnU.FlatAppearance.BorderColor = Color.Silver;
+        btnU.FlatStyle = FlatStyle.Flat;
         btnU.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnU.Location = new Point(564, 19);
         btnU.Name = "btnU";
@@ -787,6 +908,8 @@ partial class FormJogo
         // btnY
         // 
         btnY.BackColor = Color.Transparent;
+        btnY.FlatAppearance.BorderColor = Color.Silver;
+        btnY.FlatStyle = FlatStyle.Flat;
         btnY.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnY.Location = new Point(478, 19);
         btnY.Name = "btnY";
@@ -799,6 +922,8 @@ partial class FormJogo
         // btnT
         // 
         btnT.BackColor = Color.Transparent;
+        btnT.FlatAppearance.BorderColor = Color.Silver;
+        btnT.FlatStyle = FlatStyle.Flat;
         btnT.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnT.Location = new Point(392, 19);
         btnT.Name = "btnT";
@@ -811,6 +936,8 @@ partial class FormJogo
         // btnR
         // 
         btnR.BackColor = Color.Transparent;
+        btnR.FlatAppearance.BorderColor = Color.Silver;
+        btnR.FlatStyle = FlatStyle.Flat;
         btnR.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnR.Location = new Point(306, 19);
         btnR.Name = "btnR";
@@ -823,6 +950,8 @@ partial class FormJogo
         // btnE
         // 
         btnE.BackColor = Color.Transparent;
+        btnE.FlatAppearance.BorderColor = Color.Silver;
+        btnE.FlatStyle = FlatStyle.Flat;
         btnE.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnE.Location = new Point(220, 19);
         btnE.Name = "btnE";
@@ -835,6 +964,8 @@ partial class FormJogo
         // btnW
         // 
         btnW.BackColor = Color.Transparent;
+        btnW.FlatAppearance.BorderColor = Color.Silver;
+        btnW.FlatStyle = FlatStyle.Flat;
         btnW.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnW.Location = new Point(134, 19);
         btnW.Name = "btnW";
@@ -847,6 +978,8 @@ partial class FormJogo
         // btnQ
         // 
         btnQ.BackColor = Color.Transparent;
+        btnQ.FlatAppearance.BorderColor = Color.Silver;
+        btnQ.FlatStyle = FlatStyle.Flat;
         btnQ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         btnQ.Location = new Point(48, 19);
         btnQ.Name = "btnQ";
@@ -859,6 +992,8 @@ partial class FormJogo
         // btnReiniciar
         // 
         btnReiniciar.BackColor = Color.Transparent;
+        btnReiniciar.FlatAppearance.BorderColor = Color.Silver;
+        btnReiniciar.FlatStyle = FlatStyle.Flat;
         btnReiniciar.Font = new Font("MS Reference Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
         btnReiniciar.Location = new Point(715, 698);
         btnReiniciar.Name = "btnReiniciar";
@@ -919,26 +1054,38 @@ partial class FormJogo
         // 
         ouvirMusica.AutoSize = true;
         ouvirMusica.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        ouvirMusica.Location = new Point(1397, 27);
+        ouvirMusica.Location = new Point(1395, 27);
         ouvirMusica.Name = "ouvirMusica";
         ouvirMusica.Size = new Size(152, 28);
         ouvirMusica.TabIndex = 8;
         ouvirMusica.TabStop = true;
         ouvirMusica.Text = "Ouvir Musica";
         ouvirMusica.UseVisualStyleBackColor = true;
-        ouvirMusica.CheckedChanged += radioButton1_CheckedChanged;
+        ouvirMusica.CheckedChanged += ouvirMusica_Click;
         // 
         // desligarMusica
         // 
         desligarMusica.AutoSize = true;
         desligarMusica.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        desligarMusica.Location = new Point(1601, 27);
+        desligarMusica.Location = new Point(1605, 27);
         desligarMusica.Name = "desligarMusica";
         desligarMusica.Size = new Size(179, 28);
         desligarMusica.TabIndex = 9;
         desligarMusica.TabStop = true;
         desligarMusica.Text = "Desligar Musica";
         desligarMusica.UseVisualStyleBackColor = true;
+        desligarMusica.CheckedChanged += desligarMusica_Click;
+        // 
+        // videoView1
+        // 
+        videoView1.BackColor = Color.Gray;
+        videoView1.Location = new Point(1339, 91);
+        videoView1.MediaPlayer = null;
+        videoView1.Name = "videoView1";
+        videoView1.Size = new Size(474, 665);
+        videoView1.TabIndex = 10;
+        videoView1.Text = "videoView1";
+        videoView1.Visible = false;
         // 
         // FormJogo
         // 
@@ -946,6 +1093,7 @@ partial class FormJogo
         AutoScaleMode = AutoScaleMode.Font;
         BackgroundImageLayout = ImageLayout.Stretch;
         ClientSize = new Size(1904, 1041);
+        Controls.Add(videoView1);
         Controls.Add(desligarMusica);
         Controls.Add(ouvirMusica);
         Controls.Add(negarDica);
@@ -963,12 +1111,12 @@ partial class FormJogo
         StartPosition = FormStartPosition.CenterScreen;
         Text = "ValTermo";
         WindowState = FormWindowState.Maximized;
-        Load += FormJogo_Load;
         KeyDown += FormJogo_KeyDown;
         KeyPress += FormJogo_KeyPress;
         gpbJogo.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         jpbTeclado.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)videoView1).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -1042,5 +1190,7 @@ partial class FormJogo
     private Button aceitarDica;
     private Button negarDica;
     private RadioButton ouvirMusica;
+    private Button ModoClaroEscuro;
     private RadioButton desligarMusica;
+    private LibVLCSharp.WinForms.VideoView videoView1;
 }

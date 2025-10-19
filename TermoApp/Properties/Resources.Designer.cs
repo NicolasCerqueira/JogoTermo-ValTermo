@@ -71,11 +71,31 @@ namespace TermoApp.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] É_so_o_amor {
+            get {
+                object obj = ResourceManager.GetObject("É so o amor", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Gemini_Generated_Image_mud762mud762mud7 {
             get {
                 object obj = ResourceManager.GetObject("Gemini_Generated_Image_mud762mud762mud7", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IconeModoClaroEscuro {
+            get {
+                object obj = ResourceManager.GetObject("IconeModoClaroEscuro", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

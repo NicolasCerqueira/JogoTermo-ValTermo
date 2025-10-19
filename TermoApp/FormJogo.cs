@@ -1,3 +1,4 @@
+using LibVLCSharp.Shared;
 using System;
 using System.Security.Cryptography.Xml;
 using TermoLib;
@@ -11,11 +12,111 @@ namespace TermoApp
         int coluna = 1;
         int coluna2;
         int tentativas = 6;
+        bool modoModerno = false;
+
+        public LibVLC _libVLC;
+        public MediaPlayer _mediaPlayer;
 
         public FormJogo()
         {
             InitializeComponent();
             termo = new Termo();
+            Core.Initialize();
+
+            _libVLC = new LibVLC();
+
+            _mediaPlayer = new MediaPlayer(_libVLC);
+            videoView1.MediaPlayer = _mediaPlayer;
+        }
+
+        private void AplicarTemaModerno(Control ctrl)
+        {
+            Color corFundo = Color.FromArgb(24, 26, 41);
+            Color corBotao = Color.FromArgb(72, 79, 109);
+            Color corTexto = Color.White;
+
+            this.BackColor = corFundo;
+
+            if (ctrl is Button btn)
+            {
+                btn.BackColor = corBotao;
+                btn.ForeColor = corTexto;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+            }
+            else if (ctrl is Label lbl)
+            {
+                lbl.ForeColor = corTexto;
+            }
+            else if (ctrl is GroupBox gb)
+            {
+                gb.ForeColor = corTexto;
+                foreach (Control sub in gb.Controls)
+                    AplicarTemaModerno(sub);
+            }
+            else if (ctrl is RadioButton rdo)
+            {
+                rdo.ForeColor = corTexto;
+            }
+            else
+            {
+                foreach (Control sub in ctrl.Controls)
+                    AplicarTemaModerno(sub);
+            }
+        }
+
+        private void AplicarTemaClaro(Control ctrl)
+        {
+            this.BackColor = Color.White;
+
+            if (ctrl is Button btn)
+            {
+                btn.BackColor = SystemColors.Control;
+                btn.ForeColor = Color.Black;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 1;
+                btn.FlatAppearance.BorderColor = Color.LightGray;
+            }
+            else if (ctrl is Label lbl)
+            {
+                lbl.ForeColor = Color.Black;
+            }
+            else if (ctrl is GroupBox gb)
+            {
+                gb.ForeColor = Color.Black;
+                foreach (Control sub in gb.Controls)
+                    AplicarTemaClaro(sub);
+            }
+            else if (ctrl is RadioButton rdo)
+            {
+                rdo.ForeColor = Color.Black;
+            }
+            else
+            {
+                foreach (Control sub in ctrl.Controls)
+                    AplicarTemaClaro(sub);
+            }
+        }
+
+        private void Button_Chance_Click(object sender, EventArgs e)
+        {
+            modoModerno = !modoModerno;
+
+            if (modoModerno)
+            {
+                foreach (Control ctrl in this.Controls)
+                {
+                    AplicarTemaModerno(ctrl);
+                }
+            }
+            else
+            {
+                foreach (Control ctrl in this.Controls)
+                {
+                    AplicarTemaClaro(ctrl);
+                }
+            }
+            RepintarTabuleiroInteiro();
         }
 
         private void btnTeclado_Click(object sender, EventArgs e)
@@ -42,16 +143,16 @@ namespace TermoApp
                     //linha = termo.palavraAtual;
                     nomeButton = $"btn{linha}{coluna}";
                     buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-                    buttonTabuleiro.BackColor = Color.Silver; //cor da letra atual
+                    buttonTabuleiro.BackColor = Color.Silver;//cor da letra atual
                 }
 
                 nomeButton = $"btn{linha}{coluna - 1}";
                 buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-                buttonTabuleiro.BackColor = Color.Transparent; // ou a cor padrão do seu botão
+                buttonTabuleiro.BackColor = Color.Transparent;
             }
             if (coluna > 5)
             {
-                btnEnter.Focus();//para resolver o problema do enter na primeira linha
+                btnEnter.Focus();
             }
 
         }
@@ -59,8 +160,7 @@ namespace TermoApp
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
-            if (coluna <= 1) return;
+            if (coluna <= 1 || termo.palavraAtual > tentativas) return;
 
             if (coluna <= 5)
             {
@@ -75,22 +175,19 @@ namespace TermoApp
             var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
             buttonTabuleiro.BackColor = Color.Transparent;//cor da letra atual
 
-            nomeButton = $"btn{linha}{coluna - 1}";
-            buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Silver;
-
             // diminui a coluna para ir para a letra certa  que será apagada
             coluna--;
 
-            linha = termo.palavraAtual;
             nomeButton = $"btn{linha}{coluna}";
             buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
+            buttonTabuleiro.BackColor = Color.Silver;
+
             buttonTabuleiro.Text = "";
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            if (termo.palavraAtual > 6 ||termo.palavraAtual > tentativas) return;
+            if (termo.palavraAtual > tentativas || coluna <= 5) return;
             var palavra = string.Empty;
             for (int i = 1; i <= 5; i++)
             {
@@ -104,20 +201,22 @@ namespace TermoApp
             if (termo.JogoFinalizado)
             {
                 MessageBox.Show("Parabéns, Palavra Correta!",
-                            "Jogo termo", MessageBoxButtons.OK,
-                            MessageBoxIcon.Exclamation);
+                                "Jogo termo", MessageBoxButtons.OK,
+                                MessageBoxIcon.Exclamation);
+                tentativas = termo.palavraAtual - 1;
+                termo.JogoFinalizado = false;
 
             }
 
             //muda o indicador da letra que esta sendo editada
-            if (termo.palavraAtual < 6)
+            if (termo.palavraAtual <= tentativas)
             {
                 var linha = termo.palavraAtual;
                 var nomeButton = $"btn{linha}{1}";
                 var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
                 buttonTabuleiro.BackColor = Color.Silver;
                 dicaValtao();
-                for (int i = 0; i <=3; i++) Valt_Click(sender, e);
+                for (int i = 0; i <= 3; i++) Valt_Click(sender, e);
             }
         }
 
@@ -160,14 +259,12 @@ namespace TermoApp
             {
                 coluna = 5;
             }
-            //var linha = termo.palavraAtual;
             var nomeButton = $"btn{linha}{coluna}";
             var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
             buttonTabuleiro.BackColor = Color.Transparent;
 
             coluna = colunaAtual;
 
-            //linha = termo.palavraAtual; //desativei pq ja fazia em cima a mesma coisa, se der problema reativar
             nomeButton = $"btn{linha}{coluna}";
             buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
             buttonTabuleiro.BackColor = Color.Silver;
@@ -177,49 +274,45 @@ namespace TermoApp
         {
             atualizaCorParaBtnColuna(1);
             Valt_Click(sender, e);
-            btnEnter.Focus();
         }
 
         private void btnColuna2_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(2);
             Valt_Click(sender, e);
-            btnEnter.Focus();
         }
 
         private void btnColuna3_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(3);
             Valt_Click(sender, e);
-            btnEnter.Focus();
         }
 
         private void btnColuna4_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(4);
             Valt_Click(sender, e);
-            btnEnter.Focus();
         }
 
         private void btnColuna5_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(5);
             Valt_Click(sender, e);
-            btnEnter.Focus();
         }
 
-        private void btnReiniciar_Click(object sender, EventArgs e) //terminar essa runção, falta reiniciar o teclado
+        private void btnReiniciar_Click(object sender, EventArgs e)
         {
             coluna = 1;
-            for (int lin = 1; lin <= 6; lin++) //percorre as linhas
+            Color corPadraoTabuleiro = modoModerno ? Color.FromArgb(72, 79, 109) : SystemColors.Control;
+
+            for (int lin = 1; lin <= 6; lin++)
             {
                 for (int col = 1; col <= 5; col++)
                 {
                     var nomeButton = $"btn{lin}{col}";
                     var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
                     buttonTabuleiro.Text = "";
-
-                    buttonTabuleiro.BackColor = Color.White;
+                    buttonTabuleiro.BackColor = corPadraoTabuleiro;
                 }
             }
             foreach (Control controle in jpbTeclado.Controls)
@@ -227,12 +320,13 @@ namespace TermoApp
                 if (controle is Button)
                 {
                     Button botao = (Button)controle;
-                    botao.BackColor = Color.Transparent;
+                    botao.BackColor = corPadraoTabuleiro;
                 }
             }
             btn11.BackColor = Color.Silver;
             termo.reiniciaJogo();
             dicaValtao();
+            tentativas = 6;
             btn61.Enabled = true;
             btn62.Enabled = true;
             btn63.Enabled = true;
@@ -243,12 +337,6 @@ namespace TermoApp
         private void FormJogo_KeyPress(object sender, KeyPressEventArgs e)
         {
             char tecla = e.KeyChar;
-            /*if (e.KeyChar == (char)Keys.Enter)
-            {
-                jpbTeclado.Focus();
-                btnEnter.PerformClick();
-                //return;
-            }*/
 
             if (char.IsLetter(tecla) && e.KeyChar != (char)Keys.Enter)
             {
@@ -277,11 +365,6 @@ namespace TermoApp
             }
         }
 
-        private void FormJogo_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void dicaValtao()
         {
             if (termo.palavraAtual == 2)
@@ -304,7 +387,7 @@ namespace TermoApp
         private void aceitarDica_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Eu sei que você usa break no código,\n" +
-                "vai ficar sem dica e perdeu uma tentativa",
+                            "vai ficar sem dica e perdeu uma tentativa",
                             "Valtão ta na maldade", MessageBoxButtons.OK,
                             MessageBoxIcon.Exclamation);
             dicaValtao();
@@ -315,7 +398,6 @@ namespace TermoApp
             btn64.Enabled = false;
             btn65.Enabled = false;
             for (int i = 0; i <= 3; i++) Valt_Click(sender, e);
-            tentativas--;
             btn61.Text = "B";
             btn62.Text = "R";
             btn63.Text = "E";
@@ -346,28 +428,79 @@ namespace TermoApp
             int newY = random.Next(0, this.ClientSize.Height - labelValt.Height);
 
             labelValt.Location = new Point(newX, newY);
-            
+
         }
 
         private string fraseValt()
         {
             string frase = "";
             Random random = new Random();
-            int numAleatorio = random.Next(1, 7);
-            if (numAleatorio == 1) frase = "if(finalizado == true) {BREAK;}";
-            if (numAleatorio == 2) frase = "if(ValtãoFeliz == true) {RETURN;}";
-            if (numAleatorio == 3) frase = "var novaVariavelGlobal";
-            if (numAleatorio == 4) frase = "Seu código é desestruturado";
-            if (numAleatorio == 5) frase = "Cade a intentação desse código?";
-            if (numAleatorio == 6) frase = "Você não sabe conceito basico";
-            if (numAleatorio == 7) frase = "while(true) {if() return;}";
-
+            int numAleatorio = random.Next(1, 8);
+            switch (numAleatorio)
+            {
+                case 1: frase = "if(finalizado == true) {BREAK;}"; break;
+                case 2: frase = "if(ValtãoFeliz == true) {RETURN;}"; break;
+                case 3: frase = "var novaVariavelGlobal"; break;
+                case 4: frase = "Seu código é desestruturado"; break;
+                case 5: frase = "Cade a indentação desse código?"; break;
+                case 6: frase = "Você não sabe conceito basico"; break;
+                case 7: frase = "while(true) {if() return;}"; break;
+            }
             return frase;
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void RepintarTabuleiroInteiro()
         {
+            for (int linha = 0; linha < termo.tabuleiro.Count; linha++)
+            {
+                for (int col = 0; col < 5; col++)
+                {
+                    var letra = termo.tabuleiro[linha][col];
+                    var nomeBotao = $"btn{linha + 1}{col + 1}";
+                    var botao = RetornaBotao(nomeBotao);
+                    if (letra.Cor == 'V') botao.BackColor = Color.Green;
+                    else if (letra.Cor == 'A') botao.BackColor = Color.Yellow;
+                    else if (letra.Cor == 'P') botao.BackColor = Color.Gray;
+                }
+            }
 
+            foreach (var par in termo.teclado)
+            {
+                if (par.Value != 'C')
+                {
+                    var nomeBotao = $"btn{par.Key}";
+                    var botao = RetornaBotao(nomeBotao);
+                    if (par.Value == 'V')
+                    {
+                        botao.BackColor = Color.Green;
+                    }
+                    else if (par.Value == 'A' && botao.BackColor != Color.Green)
+                    {
+                        botao.BackColor = Color.Yellow;
+                    }
+                    else if (par.Value == 'P' && botao.BackColor != Color.Green && botao.BackColor != Color.Yellow)
+                    {
+                        botao.BackColor = Color.Gray;
+                    }
+                }
+            }
+        }
+
+        private void ouvirMusica_Click(object sender, EventArgs e)
+        {
+            videoView1.Visible = true;
+
+            string caminhoDoVideo = @"C:\Users\Nicolas Cerqueira\Documents\IFSP 6° semestre 2-2025\Programação orientada a eventos\JogoTermo\JogoTermo\TermoApp\Resources\É so o amor.mp4";
+
+            using (var media = new Media(_libVLC, new Uri(caminhoDoVideo)))
+            {
+                _mediaPlayer.Play(media);
+            }
+        }
+
+        private void desligarMusica_Click(object sender, EventArgs e)
+        {
+            videoView1.Visible = false;
         }
     }
 }
