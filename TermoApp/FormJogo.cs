@@ -1,5 +1,6 @@
 using LibVLCSharp.Shared;
 using System;
+using System.Diagnostics;
 using System.Security.Cryptography.Xml;
 using TermoLib;
 using static System.Windows.Forms.LinkLabel;
@@ -489,18 +490,54 @@ namespace TermoApp
         private void ouvirMusica_Click(object sender, EventArgs e)
         {
             videoView1.Visible = true;
+            musica1.Visible = true;
+            musica2.Visible = true;
+            musica3.Visible = true;
+            musica4.Visible = true;
+            DesligarMusic.Checked = false;
+        }
 
-            string caminhoDoVideo = @"C:\Users\Nicolas Cerqueira\Documents\IFSP 6° semestre 2-2025\Programação orientada a eventos\JogoTermo\JogoTermo\TermoApp\Resources\É so o amor.mp4";
-
-            using (var media = new Media(_libVLC, new Uri(caminhoDoVideo)))
+        private void desligarMusica_Click(object sender, EventArgs e)
+        {
+            _mediaPlayer.Play();
+            videoView1.Visible = false;
+            musica1.Visible = false;
+            musica2.Visible = false;
+            musica3.Visible = false;
+            musica4.Visible = false;
+            ouvirMusic.Checked = false;
+            musica1.Checked = false;
+            musica2.Checked = false;
+            musica3.Checked = false;
+            musica4.Checked = false;
+            _mediaPlayer.Stop();
+        }
+        private void playVideo(string caminhoVideo)
+        {
+            using (var media = new Media(_libVLC, new Uri(caminhoVideo)))
             {
                 _mediaPlayer.Play(media);
             }
         }
 
-        private void desligarMusica_Click(object sender, EventArgs e)
+        private void musica1_CheckedChanged(object sender, EventArgs e)
         {
-            videoView1.Visible = false;
+            //videoView1.Size = new Size(400, 630);
+            playVideo(@"C:\Users\Nicolas Cerqueira\Documents\IFSP 6° semestre 2-2025\Programação orientada a eventos\JogoTermo\JogoTermo\TermoApp\Resources\É so o amor.mp4");
+        }
+        private void musica2_CheckedChanged(object sender, EventArgs e)
+        {
+            playVideo(@"C:\Users\Nicolas Cerqueira\Documents\IFSP 6° semestre 2-2025\Programação orientada a eventos\JogoTermo\JogoTermo\TermoApp\Resources\O grande amor da minha vida.mp4");
+        }
+
+        private void musica3_CheckedChanged(object sender, EventArgs e)
+        {
+            playVideo(@"C:\Users\Nicolas Cerqueira\Documents\IFSP 6° semestre 2-2025\Programação orientada a eventos\JogoTermo\JogoTermo\TermoApp\Resources\Pensando em voce.mp4");
+        }
+
+        private void musica4_CheckedChanged(object sender, EventArgs e)
+        {
+            playVideo(@"C:\Users\Nicolas Cerqueira\Documents\IFSP 6° semestre 2-2025\Programação orientada a eventos\JogoTermo\JogoTermo\TermoApp\Resources\Talvez seja amor.mp4");
         }
     }
 }

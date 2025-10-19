@@ -93,6 +93,16 @@ namespace TermoApp.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconeBotaoMusica32x32 {
+            get {
+                object obj = ResourceManager.GetObject("IconeBotaoMusica32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconeModoClaroEscuro {
             get {
                 object obj = ResourceManager.GetObject("IconeModoClaroEscuro", resourceCulture);
@@ -107,6 +117,36 @@ namespace TermoApp.Properties {
             get {
                 object obj = ResourceManager.GetObject("MuitoFeliz", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] O_grande_amor_da_minha_vida {
+            get {
+                object obj = ResourceManager.GetObject("O grande amor da minha vida", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] Pensando_em_voce {
+            get {
+                object obj = ResourceManager.GetObject("Pensando em voce", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] Talvez_seja_amor {
+            get {
+                object obj = ResourceManager.GetObject("Talvez seja amor", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
