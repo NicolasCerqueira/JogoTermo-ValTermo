@@ -63,35 +63,77 @@
 
         public void ChecaPalavra(string palavra)
         {
-            if(palavra == "BREAK") valtBreak = true;
+            if (palavra == "BREAK") valtBreak = true;
             if (palavra == palavraSorteada)
                 JogoFinalizado = true;
             if (palavra.Length != 5) return;
-                //throw new Exception("Palavra com tamanho incorreto!");
 
-            // Adicionando palavra na matriz do tabuleiro
             var palavraTabuleiro = new List<Letra>();
-            char cor;
-            for (int i = 0; i < palavra.Length; i++)
+            bool[] palavraSorteadaUsada = new bool[5];
+            char[] coresDaRodada = new char[5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                coresDaRodada[i] = 'P';
+            }
+
+            for (int i = 0; i < 5; i++)
             {
                 if (palavra[i] == palavraSorteada[i])
                 {
-                    cor = 'V';
+                    coresDaRodada[i] = 'V';
+                    palavraSorteadaUsada[i] = true;
                 }
-                else if (palavraSorteada.Contains(palavra[i]))
-                {
-                    cor = 'A';
-                }
-                else
-                {
-                    cor = 'P';
-                }
-                palavraTabuleiro.Add(new Letra(palavra[i], cor));
-                teclado[palavra[i]] = cor;
             }
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (coresDaRodada[i] == 'V')
+                {
+                    continue;
+                }
+
+                for (int j = 0; j < 5; j++)
+                {
+                    if (palavra[i] == palavraSorteada[j] && !palavraSorteadaUsada[j])
+                    {
+                        coresDaRodada[i] = 'A';
+                        palavraSorteadaUsada[j] = true;
+                        break;
+                    }
+                }
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                char letra = palavra[i];
+                char cor = coresDaRodada[i];
+
+                palavraTabuleiro.Add(new Letra(letra, cor));
+
+                if (cor == 'V')
+                {
+                    teclado[letra] = 'V';
+                }
+                else if (cor == 'A')
+                {
+                    if (teclado[letra] != 'V')
+                    {
+                        teclado[letra] = 'A';
+                    }
+                }
+                else if (cor == 'P')
+                {
+                    if (teclado[letra] != 'V' && teclado[letra] != 'A')
+                    {
+                        teclado[letra] = 'P';
+                    }
+                }
+            }
+
             tabuleiro.Add(palavraTabuleiro);
             palavraAtual++;
         }
-        
+
     }
 }

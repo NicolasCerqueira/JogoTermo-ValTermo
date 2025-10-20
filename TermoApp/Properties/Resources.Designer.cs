@@ -199,5 +199,15 @@ namespace TermoApp.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Byte[].
+        /// </summary>
+        internal static byte[] valtemirVitoria {
+            get {
+                object obj = ResourceManager.GetObject("valtemirVitoria", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

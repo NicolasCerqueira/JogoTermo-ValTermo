@@ -19,6 +19,7 @@ namespace TermoApp
         public LibVLC _libVLC;
         public MediaPlayer _mediaPlayer;
 
+
         public FormJogo()
         {
             InitializeComponent();
@@ -29,9 +30,17 @@ namespace TermoApp
 
             _mediaPlayer = new MediaPlayer(_libVLC);
             videoView1.MediaPlayer = _mediaPlayer;
-            // Dentro de public FormJogo()
+
             ouvirMusic.Image = Properties.Resources.play;
             ModoClaroEscuro.Image = Properties.Resources.dark_mode;
+
+            //Começa o jogo no modo claro
+            foreach (Control ctrl in this.Controls)
+            {
+                AplicarTemaClaro(ctrl);
+            }
+
+            corDestaqueClaro(btn11);
         }
 
         private void AplicarTemaEscuro(Control ctrl)
@@ -110,6 +119,34 @@ namespace TermoApp
             }
         }
 
+        private void corDestaqueClaro(Button btn)
+        {
+            if (modoescuro)
+            {
+                // Define uma cor de destaque para o modo escuro (um cinza-azulado mais claro)
+                btn.BackColor = Color.FromArgb(140, 148, 170);
+            }
+            else
+            {
+                // Define a cor de destaque para o modo claro (Cinza claro, como já estava)
+                btn.BackColor = Color.Silver;
+            }
+        }
+
+        private void corDestaqueEscuro(Button btn)
+        {
+            if (modoescuro)
+            {
+                // Restaura a cor padrão do botão no modo escuro
+                btn.BackColor = Color.FromArgb(72, 79, 109);
+            }
+            else
+            {
+                // Restaura a cor padrão do botão no modo claro
+                btn.BackColor = SystemColors.Control;
+            }
+        }
+
         private void Button_Chance_Click(object sender, EventArgs e)
         {
             Button btnTema = (Button)sender;
@@ -137,6 +174,10 @@ namespace TermoApp
                 btnTema.Image = Properties.Resources.dark_mode;
             }
             RepintarTabuleiroInteiro();
+
+            var nomeButton = $"btn{termo.palavraAtual}{coluna}";
+            var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
+            corDestaqueClaro(buttonTabuleiro);
         }
 
         private void btnTeclado_Click(object sender, EventArgs e)
@@ -153,7 +194,6 @@ namespace TermoApp
             //buttonTabuleiro.BackColor = Color.Gray;
             coluna++;
 
-
             //daqui para baixo é para saber em qual letra estou digitando, em fase de teste
             if (coluna >= 2)
             {
@@ -163,21 +203,16 @@ namespace TermoApp
                     //linha = termo.palavraAtual;
                     nomeButton = $"btn{linha}{coluna}";
                     buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-                    buttonTabuleiro.BackColor = Color.Silver;//cor da letra atual
+                    corDestaqueClaro(buttonTabuleiro);
                 }
 
                 nomeButton = $"btn{linha}{coluna - 1}";
                 buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-                buttonTabuleiro.BackColor = Color.Transparent;
+                corDestaqueEscuro(buttonTabuleiro);
             }
-            if (coluna > 5)
-            {
-                btnEnter.Focus();
-            }
+            if (coluna > 5) btnEnter.Focus();
 
         }
-
-
         private void btnBack_Click(object sender, EventArgs e)
         {
             if (coluna <= 1 || termo.palavraAtual > tentativas) return;
@@ -193,21 +228,21 @@ namespace TermoApp
             var linha = termo.palavraAtual;
             var nomeButton = $"btn{linha}{coluna2}";
             var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Transparent;//cor da letra atual
+            corDestaqueEscuro(buttonTabuleiro);
 
             // diminui a coluna para ir para a letra certa  que será apagada
             coluna--;
 
             nomeButton = $"btn{linha}{coluna}";
             buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Silver;
+            corDestaqueClaro(buttonTabuleiro);
 
             buttonTabuleiro.Text = "";
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            //if(termo.valtBreak == true) this.Close(); 
+            //if(termo.valtBreak == true) this.Close();  
             if (termo.palavraAtual > tentativas || coluna <= 5) return;
             var palavra = string.Empty;
             for (int i = 1; i <= 5; i++)
@@ -219,19 +254,21 @@ namespace TermoApp
             termo.ChecaPalavra(palavra);
             if (termo.valtBreak == true)
             {
-                this.Close(); 
-                return;       
+                this.Close();
+                return;
             }
             AtualizaTabuleiro();
             coluna = 1;
             if (termo.JogoFinalizado)
             {
                 MessageBox.Show("Parabéns você passou pelo Valtermir," +
-                    " nos vemo semestre que vem!",
+                      " nos veremos semestre que vem!",
                                 "VelTermo", MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
                 tentativas = termo.palavraAtual - 1;
                 termo.JogoFinalizado = false;
+                FormVitoria formVit = new FormVitoria();
+                formVit.Show();
 
             }
 
@@ -241,8 +278,7 @@ namespace TermoApp
                 var linha = termo.palavraAtual;
                 var nomeButton = $"btn{linha}{1}";
                 var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-                buttonTabuleiro.BackColor = Color.Silver;
-                //dicaValtao();
+                corDestaqueClaro(buttonTabuleiro);
                 for (int i = 0; i <= 3; i++) Valt_Click(sender, e);
             }
         }
@@ -288,13 +324,13 @@ namespace TermoApp
             }
             var nomeButton = $"btn{linha}{coluna}";
             var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Transparent;
+            corDestaqueEscuro(buttonTabuleiro);
 
             coluna = colunaAtual;
 
             nomeButton = $"btn{linha}{coluna}";
             buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Silver;
+            corDestaqueClaro(buttonTabuleiro);
 
         }
         private void btnColuna1_Click(object sender, EventArgs e)
@@ -350,15 +386,16 @@ namespace TermoApp
                     botao.BackColor = corPadraoTabuleiro;
                 }
             }
-            btn11.BackColor = Color.Silver;
+            corDestaqueClaro(btn11);
+
             termo.reiniciaJogo();
-            //dicaValtao();
             tentativas = 6;
             btn61.Enabled = true;
             btn62.Enabled = true;
             btn63.Enabled = true;
             btn64.Enabled = true;
             btn65.Enabled = true;
+            dica.Enabled = true;
         }
 
         private void FormJogo_KeyPress(object sender, KeyPressEventArgs e)
@@ -392,58 +429,22 @@ namespace TermoApp
             }
         }
 
-        private void dicaValtao()//atualmente sem uso
+        public void aceitarDica_Consequencias()
         {
-            if (termo.palavraAtual == 2)
-            {
-                pictureBox1.Visible = true;
-                pictureBox1.Image = Properties.Resources.MuitoFeliz;
-                labelValt.Visible = true;
-                aceitarDica.Visible = true;
-                negarDica.Visible = true;
-            }
-            else
-            {
-                pictureBox1.Visible = false;
-                labelValt.Visible = false;
-                aceitarDica.Visible = false;
-                negarDica.Visible = false;
-            }
-        }
-
-        private void aceitarDica_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Eu sei que você usa break no código,\n" +
-                            "vai ficar sem dica e perdeu uma tentativa",
-                            "Valtão ta na maldade", MessageBoxButtons.OK,
-                            MessageBoxIcon.Exclamation);
-            //dicaValtao();
             tentativas--;
             btn61.Enabled = false;
             btn62.Enabled = false;
             btn63.Enabled = false;
             btn64.Enabled = false;
             btn65.Enabled = false;
-            for (int i = 0; i <= 3; i++) Valt_Click(sender, e);
+            for (int i = 0; i <= 3; i++) Valt_Click(null, null);
             btn61.Text = "B";
             btn62.Text = "R";
             btn63.Text = "E";
             btn64.Text = "A";
             btn65.Text = "K";
+            dica.Enabled = false;
 
-            pictureBox1.Visible = false;
-            labelValt.Visible = false;
-            aceitarDica.Visible = false;
-            negarDica.Visible = false;
-
-        }
-
-        private void negarDica_Click(object sender, EventArgs e)
-        {
-            pictureBox1.Visible = false;
-            labelValt.Visible = false;
-            aceitarDica.Visible = false;
-            negarDica.Visible = false;
         }
 
         private void Valt_Click(object sender, EventArgs e)
@@ -557,7 +558,6 @@ namespace TermoApp
 
         private void musica1_CheckedChanged(object sender, EventArgs e)
         {
-            //videoView1.Size = new Size(400, 630);
             playVideo(@"C:\Users\Nicolas Cerqueira\Documents\IFSP 6° semestre 2-2025\Programação orientada a eventos\JogoTermo\JogoTermo\TermoApp\Resources\É so o amor.mp4");
         }
         private void musica2_CheckedChanged(object sender, EventArgs e)
@@ -577,19 +577,8 @@ namespace TermoApp
 
         private void dica_Click(object sender, EventArgs e)
         {
-            int pos = 0;
-            pos = termo.palavraAtual;
-
-            pictureBox1.Visible = true;
-            pictureBox1.Image = Properties.Resources.MuitoFeliz;
-            labelValt.Visible = true;
-            aceitarDica.Visible = true;
-            negarDica.Visible = true;
-
-            //pictureBox1.Visible = false;
-            //labelValt.Visible = false;
-            //aceitarDica.Visible = false;
-            //negarDica.Visible = false;
+            FormDicaValt formDica = new FormDicaValt(this);
+            formDica.Show();
 
         }
     }

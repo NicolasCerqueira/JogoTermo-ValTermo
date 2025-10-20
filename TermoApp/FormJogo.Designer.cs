@@ -28,13 +28,9 @@ partial class FormJogo
     /// </summary>
     private void InitializeComponent()
     {
-        pictureBox1 = new PictureBox();
         ModoClaroEscuro = new Button();
         btnReiniciar = new Button();
         label1 = new Label();
-        labelValt = new Label();
-        aceitarDica = new Button();
-        negarDica = new Button();
         videoView1 = new LibVLCSharp.WinForms.VideoView();
         musica1 = new RadioButton();
         musica2 = new RadioButton();
@@ -100,20 +96,8 @@ partial class FormJogo
         btnE = new Button();
         btnW = new Button();
         btnQ = new Button();
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)videoView1).BeginInit();
         SuspendLayout();
-        // 
-        // pictureBox1
-        // 
-        pictureBox1.InitialImage = null;
-        pictureBox1.Location = new Point(90, 124);
-        pictureBox1.Name = "pictureBox1";
-        pictureBox1.Size = new Size(540, 330);
-        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-        pictureBox1.TabIndex = 4;
-        pictureBox1.TabStop = false;
-        pictureBox1.Visible = false;
         // 
         // ModoClaroEscuro
         // 
@@ -153,49 +137,6 @@ partial class FormJogo
         label1.Size = new Size(347, 79);
         label1.TabIndex = 3;
         label1.Text = "ValTermo";
-        // 
-        // labelValt
-        // 
-        labelValt.AutoSize = true;
-        labelValt.Font = new Font("MS Reference Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        labelValt.Location = new Point(90, 88);
-        labelValt.Name = "labelValt";
-        labelValt.Size = new Size(580, 29);
-        labelValt.TabIndex = 5;
-        labelValt.Text = "Valtão está feliz hoje, quer uma dica do Valtão?";
-        labelValt.TextAlign = ContentAlignment.MiddleCenter;
-        labelValt.Visible = false;
-        labelValt.Click += Valt_Click;
-        // 
-        // aceitarDica
-        // 
-        aceitarDica.BackColor = Color.Gainsboro;
-        aceitarDica.FlatAppearance.BorderSize = 0;
-        aceitarDica.FlatStyle = FlatStyle.Flat;
-        aceitarDica.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        aceitarDica.Location = new Point(131, 460);
-        aceitarDica.Name = "aceitarDica";
-        aceitarDica.Size = new Size(204, 63);
-        aceitarDica.TabIndex = 6;
-        aceitarDica.Text = "Aceitar";
-        aceitarDica.UseVisualStyleBackColor = false;
-        aceitarDica.Visible = false;
-        aceitarDica.Click += aceitarDica_Click;
-        // 
-        // negarDica
-        // 
-        negarDica.BackColor = Color.Gainsboro;
-        negarDica.FlatAppearance.BorderSize = 0;
-        negarDica.FlatStyle = FlatStyle.Flat;
-        negarDica.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        negarDica.Location = new Point(383, 460);
-        negarDica.Name = "negarDica";
-        negarDica.Size = new Size(204, 63);
-        negarDica.TabIndex = 7;
-        negarDica.Text = "Recusar";
-        negarDica.UseVisualStyleBackColor = false;
-        negarDica.Visible = false;
-        negarDica.Click += negarDica_Click;
         // 
         // videoView1
         // 
@@ -1172,13 +1113,9 @@ partial class FormJogo
         Controls.Add(musica2);
         Controls.Add(musica1);
         Controls.Add(videoView1);
-        Controls.Add(negarDica);
-        Controls.Add(aceitarDica);
-        Controls.Add(labelValt);
-        Controls.Add(pictureBox1);
         Controls.Add(label1);
         Controls.Add(btnReiniciar);
-        FormBorderStyle = FormBorderStyle.Fixed3D;
+        FormBorderStyle = FormBorderStyle.None;
         KeyPreview = true;
         MaximizeBox = false;
         MinimizeBox = false;
@@ -1188,7 +1125,6 @@ partial class FormJogo
         WindowState = FormWindowState.Maximized;
         KeyDown += FormJogo_KeyDown;
         KeyPress += FormJogo_KeyPress;
-        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ((System.ComponentModel.ISupportInitialize)videoView1).EndInit();
         ResumeLayout(false);
         PerformLayout();
@@ -1197,10 +1133,6 @@ partial class FormJogo
     #endregion
     private Button btnReiniciar;
     private Label label1;
-    private PictureBox pictureBox1;
-    private Label labelValt;
-    private Button aceitarDica;
-    private Button negarDica;
     private Button ModoClaroEscuro;
     private LibVLCSharp.WinForms.VideoView videoView1;
     private RadioButton musica1;
