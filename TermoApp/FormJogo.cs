@@ -13,7 +13,8 @@ namespace TermoApp
         int coluna = 1;
         int coluna2;
         int tentativas = 6;
-        bool modoModerno = false;
+        bool modoescuro = false;
+        private bool musicaTocando = false;
 
         public LibVLC _libVLC;
         public MediaPlayer _mediaPlayer;
@@ -28,9 +29,12 @@ namespace TermoApp
 
             _mediaPlayer = new MediaPlayer(_libVLC);
             videoView1.MediaPlayer = _mediaPlayer;
+            // Dentro de public FormJogo()
+            ouvirMusic.Image = Properties.Resources.play;
+            ModoClaroEscuro.Image = Properties.Resources.dark_mode;
         }
 
-        private void AplicarTemaModerno(Control ctrl)
+        private void AplicarTemaEscuro(Control ctrl)
         {
             Color corFundo = Color.FromArgb(24, 26, 41);
             Color corBotao = Color.FromArgb(72, 79, 109);
@@ -40,10 +44,14 @@ namespace TermoApp
 
             if (ctrl is Button btn)
             {
-                btn.BackColor = corFundo;
+                btn.BackColor = corBotao;
                 btn.ForeColor = corTexto;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
+                ouvirMusic.BackColor = corBotao;
+                ouvirMusic.ForeColor = corTexto;
+                ouvirMusic.FlatAppearance.BorderSize = 0;
+                ouvirMusic.FlatAppearance.BorderColor = corFundo;
             }
             else if (ctrl is Label lbl)
             {
@@ -53,7 +61,7 @@ namespace TermoApp
             {
                 gb.ForeColor = corTexto;
                 foreach (Control sub in gb.Controls)
-                    AplicarTemaModerno(sub);
+                    AplicarTemaEscuro(sub);
             }
             else if (ctrl is RadioButton rdo)
             {
@@ -62,7 +70,7 @@ namespace TermoApp
             else
             {
                 foreach (Control sub in ctrl.Controls)
-                    AplicarTemaModerno(sub);
+                    AplicarTemaEscuro(sub);
             }
         }
 
@@ -77,6 +85,9 @@ namespace TermoApp
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 1;
                 btn.FlatAppearance.BorderColor = Color.LightGray;
+                ouvirMusic.BackColor = SystemColors.Control;
+                ouvirMusic.ForeColor = Color.Black;
+
             }
             else if (ctrl is Label lbl)
             {
@@ -101,21 +112,29 @@ namespace TermoApp
 
         private void Button_Chance_Click(object sender, EventArgs e)
         {
-            modoModerno = !modoModerno;
+            Button btnTema = (Button)sender;
 
-            if (modoModerno)
+            modoescuro = !modoescuro;
+
+            if (modoescuro)
             {
+                // Ativando o tema escuro
                 foreach (Control ctrl in this.Controls)
                 {
-                    AplicarTemaModerno(ctrl);
+                    AplicarTemaEscuro(ctrl);
                 }
+                // O tema está escuro, então o botão deve mostrar o ícone para ir para o claro (SOL)
+                btnTema.Image = Properties.Resources.light_mode;
             }
             else
             {
+                // Voltando para o tema claro
                 foreach (Control ctrl in this.Controls)
                 {
                     AplicarTemaClaro(ctrl);
                 }
+                // O tema está claro, então o botão deve mostrar o ícone para ir para o escuro (LUA)
+                btnTema.Image = Properties.Resources.dark_mode;
             }
             RepintarTabuleiroInteiro();
         }
@@ -149,7 +168,7 @@ namespace TermoApp
 
                 nomeButton = $"btn{linha}{coluna - 1}";
                 buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-                buttonTabuleiro.BackColor = Color.Gainsboro;
+                buttonTabuleiro.BackColor = Color.Transparent;
             }
             if (coluna > 5)
             {
@@ -174,7 +193,7 @@ namespace TermoApp
             var linha = termo.palavraAtual;
             var nomeButton = $"btn{linha}{coluna2}";
             var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.G;//cor da letra atual
+            buttonTabuleiro.BackColor = Color.Transparent;//cor da letra atual
 
             // diminui a coluna para ir para a letra certa  que será apagada
             coluna--;
@@ -188,6 +207,7 @@ namespace TermoApp
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
+            //if(termo.valtBreak == true) this.Close(); 
             if (termo.palavraAtual > tentativas || coluna <= 5) return;
             var palavra = string.Empty;
             for (int i = 1; i <= 5; i++)
@@ -197,12 +217,18 @@ namespace TermoApp
                 palavra += botao.Text;
             }
             termo.ChecaPalavra(palavra);
+            if (termo.valtBreak == true)
+            {
+                this.Close(); 
+                return;       
+            }
             AtualizaTabuleiro();
             coluna = 1;
             if (termo.JogoFinalizado)
             {
-                MessageBox.Show("Parabéns, Palavra Correta!",
-                                "Jogo termo", MessageBoxButtons.OK,
+                MessageBox.Show("Parabéns você passou pelo Valtermir," +
+                    " nos vemo semestre que vem!",
+                                "VelTermo", MessageBoxButtons.OK,
                                 MessageBoxIcon.Exclamation);
                 tentativas = termo.palavraAtual - 1;
                 termo.JogoFinalizado = false;
@@ -262,7 +288,7 @@ namespace TermoApp
             }
             var nomeButton = $"btn{linha}{coluna}";
             var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Gainsboro;
+            buttonTabuleiro.BackColor = Color.Transparent;
 
             coluna = colunaAtual;
 
@@ -304,7 +330,7 @@ namespace TermoApp
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             coluna = 1;
-            Color corPadraoTabuleiro = modoModerno ? Color.FromArgb(72, 79, 109) : SystemColors.Control;
+            Color corPadraoTabuleiro = modoescuro ? Color.FromArgb(72, 79, 109) : SystemColors.Control;
 
             for (int lin = 1; lin <= 6; lin++)
             {
@@ -316,7 +342,7 @@ namespace TermoApp
                     buttonTabuleiro.BackColor = corPadraoTabuleiro;
                 }
             }
-            foreach (Control controle in jpbTeclado.Controls)
+            foreach (Control controle in this.Controls)
             {
                 if (controle is Button)
                 {
@@ -494,17 +520,19 @@ namespace TermoApp
 
         private void Musica_Click(object sender, EventArgs e)
         {
+            musicaTocando = !musicaTocando;
             if (ouvirMusic.Checked == true)
             {
+                ouvirMusic.Image = Properties.Resources.pause;
                 videoView1.Visible = true;
                 musica1.Visible = true;
                 musica2.Visible = true;
                 musica3.Visible = true;
                 musica4.Visible = true;
-                ouvirMusic.Text = "Desligar musica";
             }
             else
             {
+                ouvirMusic.Image = Properties.Resources.play;
                 _mediaPlayer.Play();
                 videoView1.Visible = false;
                 musica1.Visible = false;
@@ -517,7 +545,6 @@ namespace TermoApp
                 musica3.Checked = false;
                 musica4.Checked = false;
                 _mediaPlayer.Stop();
-                ouvirMusic.Text = "Ouvir musica";
             }
         }
         private void playVideo(string caminhoVideo)

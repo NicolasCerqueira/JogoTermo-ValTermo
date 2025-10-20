@@ -19,6 +19,7 @@
         public Dictionary<char, char> teclado;
         public int palavraAtual;
         public bool JogoFinalizado;
+        public bool valtBreak = false;
 
         public Termo()
         {
@@ -62,6 +63,7 @@
 
         public void ChecaPalavra(string palavra)
         {
+            if(palavra == "BREAK") valtBreak = true;
             if (palavra == palavraSorteada)
                 JogoFinalizado = true;
             if (palavra.Length != 5) return;

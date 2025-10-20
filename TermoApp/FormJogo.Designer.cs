@@ -29,34 +29,6 @@ partial class FormJogo
     private void InitializeComponent()
     {
         pictureBox1 = new PictureBox();
-        btnEnter = new Button();
-        btnM = new Button();
-        btnN = new Button();
-        btnB = new Button();
-        btnV = new Button();
-        btnC = new Button();
-        btnX = new Button();
-        btnZ = new Button();
-        backSpace = new Button();
-        btnL = new Button();
-        btnK = new Button();
-        btnJ = new Button();
-        btnH = new Button();
-        btnG = new Button();
-        btnF = new Button();
-        btnD = new Button();
-        btnS = new Button();
-        btnA = new Button();
-        btnP = new Button();
-        btnO = new Button();
-        btnI = new Button();
-        btnU = new Button();
-        btnY = new Button();
-        btnT = new Button();
-        btnR = new Button();
-        btnE = new Button();
-        btnW = new Button();
-        btnQ = new Button();
         ModoClaroEscuro = new Button();
         btnReiniciar = new Button();
         label1 = new Label();
@@ -70,7 +42,6 @@ partial class FormJogo
         musica4 = new RadioButton();
         ouvirMusic = new CheckBox();
         dica = new Button();
-        jpbTeclado = new GroupBox();
         btn65 = new Button();
         btn64 = new Button();
         btn63 = new Button();
@@ -101,9 +72,36 @@ partial class FormJogo
         btn13 = new Button();
         btn12 = new Button();
         btn11 = new Button();
+        btnEnter = new Button();
+        btnM = new Button();
+        btnN = new Button();
+        btnB = new Button();
+        btnV = new Button();
+        btnC = new Button();
+        btnX = new Button();
+        btnZ = new Button();
+        backSpace = new Button();
+        btnL = new Button();
+        btnK = new Button();
+        btnJ = new Button();
+        btnH = new Button();
+        btnG = new Button();
+        btnF = new Button();
+        btnD = new Button();
+        btnS = new Button();
+        btnA = new Button();
+        btnP = new Button();
+        btnO = new Button();
+        btnI = new Button();
+        btnU = new Button();
+        btnY = new Button();
+        btnT = new Button();
+        btnR = new Button();
+        btnE = new Button();
+        btnW = new Button();
+        btnQ = new Button();
         ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         ((System.ComponentModel.ISupportInitialize)videoView1).BeginInit();
-        jpbTeclado.SuspendLayout();
         SuspendLayout();
         // 
         // pictureBox1
@@ -115,404 +113,14 @@ partial class FormJogo
         pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         pictureBox1.TabIndex = 4;
         pictureBox1.TabStop = false;
-        pictureBox1.Click += Valt_Click;
-        // 
-        // btnEnter
-        // 
-        btnEnter.BackColor = Color.Transparent;
-        btnEnter.FlatAppearance.BorderColor = Color.Silver;
-        btnEnter.FlatStyle = FlatStyle.Flat;
-        btnEnter.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnEnter.Location = new Point(730, 151);
-        btnEnter.Name = "btnEnter";
-        btnEnter.Size = new Size(120, 60);
-        btnEnter.TabIndex = 27;
-        btnEnter.Text = "Enter";
-        btnEnter.UseVisualStyleBackColor = false;
-        btnEnter.Click += btnEnter_Click;
-        // 
-        // btnM
-        // 
-        btnM.BackColor = Color.Transparent;
-        btnM.FlatAppearance.BorderColor = Color.Silver;
-        btnM.FlatStyle = FlatStyle.Flat;
-        btnM.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnM.Location = new Point(644, 151);
-        btnM.Name = "btnM";
-        btnM.Size = new Size(80, 60);
-        btnM.TabIndex = 26;
-        btnM.Text = "M";
-        btnM.UseVisualStyleBackColor = false;
-        btnM.Click += btnTeclado_Click;
-        // 
-        // btnN
-        // 
-        btnN.BackColor = Color.Transparent;
-        btnN.FlatAppearance.BorderColor = Color.Silver;
-        btnN.FlatStyle = FlatStyle.Flat;
-        btnN.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnN.Location = new Point(558, 151);
-        btnN.Name = "btnN";
-        btnN.Size = new Size(80, 60);
-        btnN.TabIndex = 25;
-        btnN.Text = "N";
-        btnN.UseVisualStyleBackColor = false;
-        btnN.Click += btnTeclado_Click;
-        // 
-        // btnB
-        // 
-        btnB.BackColor = Color.Transparent;
-        btnB.FlatAppearance.BorderColor = Color.Silver;
-        btnB.FlatStyle = FlatStyle.Flat;
-        btnB.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnB.Location = new Point(472, 151);
-        btnB.Name = "btnB";
-        btnB.Size = new Size(80, 60);
-        btnB.TabIndex = 24;
-        btnB.Text = "B";
-        btnB.UseVisualStyleBackColor = false;
-        btnB.Click += btnTeclado_Click;
-        // 
-        // btnV
-        // 
-        btnV.BackColor = Color.Transparent;
-        btnV.FlatAppearance.BorderColor = Color.Silver;
-        btnV.FlatStyle = FlatStyle.Flat;
-        btnV.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnV.Location = new Point(386, 151);
-        btnV.Name = "btnV";
-        btnV.Size = new Size(80, 60);
-        btnV.TabIndex = 23;
-        btnV.Text = "V";
-        btnV.UseVisualStyleBackColor = false;
-        btnV.Click += btnTeclado_Click;
-        // 
-        // btnC
-        // 
-        btnC.BackColor = Color.Transparent;
-        btnC.FlatAppearance.BorderColor = Color.Silver;
-        btnC.FlatStyle = FlatStyle.Flat;
-        btnC.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnC.Location = new Point(301, 151);
-        btnC.Name = "btnC";
-        btnC.Size = new Size(80, 60);
-        btnC.TabIndex = 22;
-        btnC.Text = "C";
-        btnC.UseVisualStyleBackColor = false;
-        btnC.Click += btnTeclado_Click;
-        // 
-        // btnX
-        // 
-        btnX.BackColor = Color.Transparent;
-        btnX.FlatAppearance.BorderColor = Color.Silver;
-        btnX.FlatStyle = FlatStyle.Flat;
-        btnX.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnX.Location = new Point(215, 151);
-        btnX.Name = "btnX";
-        btnX.Size = new Size(80, 60);
-        btnX.TabIndex = 21;
-        btnX.Text = "X";
-        btnX.UseVisualStyleBackColor = false;
-        btnX.Click += btnTeclado_Click;
-        // 
-        // btnZ
-        // 
-        btnZ.BackColor = Color.Transparent;
-        btnZ.FlatAppearance.BorderColor = Color.Silver;
-        btnZ.FlatStyle = FlatStyle.Flat;
-        btnZ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnZ.Location = new Point(129, 151);
-        btnZ.Name = "btnZ";
-        btnZ.Size = new Size(80, 60);
-        btnZ.TabIndex = 20;
-        btnZ.Text = "Z";
-        btnZ.UseVisualStyleBackColor = false;
-        btnZ.Click += btnTeclado_Click;
-        // 
-        // backSpace
-        // 
-        backSpace.BackColor = Color.Transparent;
-        backSpace.FlatAppearance.BorderColor = Color.Silver;
-        backSpace.FlatStyle = FlatStyle.Flat;
-        backSpace.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        backSpace.Location = new Point(847, 85);
-        backSpace.Name = "backSpace";
-        backSpace.Size = new Size(100, 60);
-        backSpace.TabIndex = 19;
-        backSpace.Text = "⌫";
-        backSpace.UseVisualStyleBackColor = false;
-        backSpace.Click += btnBack_Click;
-        // 
-        // btnL
-        // 
-        btnL.BackColor = Color.Transparent;
-        btnL.FlatAppearance.BorderColor = Color.Silver;
-        btnL.FlatStyle = FlatStyle.Flat;
-        btnL.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnL.Location = new Point(761, 85);
-        btnL.Name = "btnL";
-        btnL.Size = new Size(80, 60);
-        btnL.TabIndex = 18;
-        btnL.Text = "L";
-        btnL.UseVisualStyleBackColor = false;
-        btnL.Click += btnTeclado_Click;
-        // 
-        // btnK
-        // 
-        btnK.BackColor = Color.Transparent;
-        btnK.FlatAppearance.BorderColor = Color.Silver;
-        btnK.FlatStyle = FlatStyle.Flat;
-        btnK.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnK.Location = new Point(675, 85);
-        btnK.Name = "btnK";
-        btnK.Size = new Size(80, 60);
-        btnK.TabIndex = 17;
-        btnK.Text = "K";
-        btnK.UseVisualStyleBackColor = false;
-        btnK.Click += btnTeclado_Click;
-        // 
-        // btnJ
-        // 
-        btnJ.BackColor = Color.Transparent;
-        btnJ.FlatAppearance.BorderColor = Color.Silver;
-        btnJ.FlatStyle = FlatStyle.Flat;
-        btnJ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnJ.Location = new Point(589, 85);
-        btnJ.Name = "btnJ";
-        btnJ.Size = new Size(80, 60);
-        btnJ.TabIndex = 16;
-        btnJ.Text = "J";
-        btnJ.UseVisualStyleBackColor = false;
-        btnJ.Click += btnTeclado_Click;
-        // 
-        // btnH
-        // 
-        btnH.BackColor = Color.Transparent;
-        btnH.FlatAppearance.BorderColor = Color.Silver;
-        btnH.FlatStyle = FlatStyle.Flat;
-        btnH.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnH.Location = new Point(503, 85);
-        btnH.Name = "btnH";
-        btnH.Size = new Size(80, 60);
-        btnH.TabIndex = 15;
-        btnH.Text = "H";
-        btnH.UseVisualStyleBackColor = false;
-        btnH.Click += btnTeclado_Click;
-        // 
-        // btnG
-        // 
-        btnG.BackColor = Color.Transparent;
-        btnG.FlatAppearance.BorderColor = Color.Silver;
-        btnG.FlatStyle = FlatStyle.Flat;
-        btnG.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnG.Location = new Point(417, 85);
-        btnG.Name = "btnG";
-        btnG.Size = new Size(80, 60);
-        btnG.TabIndex = 14;
-        btnG.Text = "G";
-        btnG.UseVisualStyleBackColor = false;
-        btnG.Click += btnTeclado_Click;
-        // 
-        // btnF
-        // 
-        btnF.BackColor = Color.Transparent;
-        btnF.FlatAppearance.BorderColor = Color.Silver;
-        btnF.FlatStyle = FlatStyle.Flat;
-        btnF.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnF.Location = new Point(331, 85);
-        btnF.Name = "btnF";
-        btnF.Size = new Size(80, 60);
-        btnF.TabIndex = 13;
-        btnF.Text = "F";
-        btnF.UseVisualStyleBackColor = false;
-        btnF.Click += btnTeclado_Click;
-        // 
-        // btnD
-        // 
-        btnD.BackColor = Color.Transparent;
-        btnD.FlatAppearance.BorderColor = Color.Silver;
-        btnD.FlatStyle = FlatStyle.Flat;
-        btnD.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnD.Location = new Point(245, 85);
-        btnD.Name = "btnD";
-        btnD.Size = new Size(80, 60);
-        btnD.TabIndex = 12;
-        btnD.Text = "D";
-        btnD.UseVisualStyleBackColor = false;
-        btnD.Click += btnTeclado_Click;
-        // 
-        // btnS
-        // 
-        btnS.BackColor = Color.Transparent;
-        btnS.FlatAppearance.BorderColor = Color.Silver;
-        btnS.FlatStyle = FlatStyle.Flat;
-        btnS.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnS.Location = new Point(159, 85);
-        btnS.Name = "btnS";
-        btnS.Size = new Size(80, 60);
-        btnS.TabIndex = 11;
-        btnS.Text = "S";
-        btnS.UseVisualStyleBackColor = false;
-        btnS.Click += btnTeclado_Click;
-        // 
-        // btnA
-        // 
-        btnA.BackColor = Color.Transparent;
-        btnA.FlatAppearance.BorderColor = Color.Silver;
-        btnA.FlatStyle = FlatStyle.Flat;
-        btnA.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnA.Location = new Point(73, 85);
-        btnA.Name = "btnA";
-        btnA.Size = new Size(80, 60);
-        btnA.TabIndex = 10;
-        btnA.Text = "A";
-        btnA.UseVisualStyleBackColor = false;
-        btnA.Click += btnTeclado_Click;
-        // 
-        // btnP
-        // 
-        btnP.BackColor = Color.Transparent;
-        btnP.FlatAppearance.BorderColor = Color.Silver;
-        btnP.FlatStyle = FlatStyle.Flat;
-        btnP.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnP.Location = new Point(822, 19);
-        btnP.Name = "btnP";
-        btnP.Size = new Size(80, 60);
-        btnP.TabIndex = 9;
-        btnP.Text = "P";
-        btnP.UseVisualStyleBackColor = false;
-        btnP.Click += btnTeclado_Click;
-        // 
-        // btnO
-        // 
-        btnO.BackColor = Color.Transparent;
-        btnO.FlatAppearance.BorderColor = Color.Silver;
-        btnO.FlatStyle = FlatStyle.Flat;
-        btnO.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnO.Location = new Point(736, 19);
-        btnO.Name = "btnO";
-        btnO.Size = new Size(80, 60);
-        btnO.TabIndex = 8;
-        btnO.Text = "O";
-        btnO.UseVisualStyleBackColor = false;
-        btnO.Click += btnTeclado_Click;
-        // 
-        // btnI
-        // 
-        btnI.BackColor = Color.Transparent;
-        btnI.FlatAppearance.BorderColor = Color.Silver;
-        btnI.FlatStyle = FlatStyle.Flat;
-        btnI.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnI.Location = new Point(650, 19);
-        btnI.Name = "btnI";
-        btnI.Size = new Size(80, 60);
-        btnI.TabIndex = 7;
-        btnI.Text = "I";
-        btnI.UseVisualStyleBackColor = false;
-        btnI.Click += btnTeclado_Click;
-        // 
-        // btnU
-        // 
-        btnU.BackColor = Color.Transparent;
-        btnU.FlatAppearance.BorderColor = Color.Silver;
-        btnU.FlatStyle = FlatStyle.Flat;
-        btnU.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnU.Location = new Point(564, 19);
-        btnU.Name = "btnU";
-        btnU.Size = new Size(80, 60);
-        btnU.TabIndex = 6;
-        btnU.Text = "U";
-        btnU.UseVisualStyleBackColor = false;
-        btnU.Click += btnTeclado_Click;
-        // 
-        // btnY
-        // 
-        btnY.BackColor = Color.Transparent;
-        btnY.FlatAppearance.BorderColor = Color.Silver;
-        btnY.FlatStyle = FlatStyle.Flat;
-        btnY.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnY.Location = new Point(478, 19);
-        btnY.Name = "btnY";
-        btnY.Size = new Size(80, 60);
-        btnY.TabIndex = 5;
-        btnY.Text = "Y";
-        btnY.UseVisualStyleBackColor = false;
-        btnY.Click += btnTeclado_Click;
-        // 
-        // btnT
-        // 
-        btnT.BackColor = Color.Transparent;
-        btnT.FlatAppearance.BorderColor = Color.Silver;
-        btnT.FlatStyle = FlatStyle.Flat;
-        btnT.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnT.Location = new Point(392, 19);
-        btnT.Name = "btnT";
-        btnT.Size = new Size(80, 60);
-        btnT.TabIndex = 4;
-        btnT.Text = "T";
-        btnT.UseVisualStyleBackColor = false;
-        btnT.Click += btnTeclado_Click;
-        // 
-        // btnR
-        // 
-        btnR.BackColor = Color.Transparent;
-        btnR.FlatAppearance.BorderColor = Color.Silver;
-        btnR.FlatStyle = FlatStyle.Flat;
-        btnR.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnR.Location = new Point(306, 19);
-        btnR.Name = "btnR";
-        btnR.Size = new Size(80, 60);
-        btnR.TabIndex = 3;
-        btnR.Text = "R";
-        btnR.UseVisualStyleBackColor = false;
-        btnR.Click += btnTeclado_Click;
-        // 
-        // btnE
-        // 
-        btnE.BackColor = Color.Transparent;
-        btnE.FlatAppearance.BorderColor = Color.Silver;
-        btnE.FlatStyle = FlatStyle.Flat;
-        btnE.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnE.Location = new Point(220, 19);
-        btnE.Name = "btnE";
-        btnE.Size = new Size(80, 60);
-        btnE.TabIndex = 2;
-        btnE.Text = "E";
-        btnE.UseVisualStyleBackColor = false;
-        btnE.Click += btnTeclado_Click;
-        // 
-        // btnW
-        // 
-        btnW.BackColor = Color.Transparent;
-        btnW.FlatAppearance.BorderColor = Color.Silver;
-        btnW.FlatStyle = FlatStyle.Flat;
-        btnW.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnW.Location = new Point(134, 19);
-        btnW.Name = "btnW";
-        btnW.Size = new Size(80, 60);
-        btnW.TabIndex = 1;
-        btnW.Text = "W";
-        btnW.UseVisualStyleBackColor = false;
-        btnW.Click += btnTeclado_Click;
-        // 
-        // btnQ
-        // 
-        btnQ.BackColor = Color.Transparent;
-        btnQ.FlatAppearance.BorderColor = Color.Silver;
-        btnQ.FlatStyle = FlatStyle.Flat;
-        btnQ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnQ.Location = new Point(48, 19);
-        btnQ.Name = "btnQ";
-        btnQ.Size = new Size(80, 60);
-        btnQ.TabIndex = 0;
-        btnQ.Text = "Q";
-        btnQ.UseVisualStyleBackColor = false;
-        btnQ.Click += btnTeclado_Click;
+        pictureBox1.Visible = false;
         // 
         // ModoClaroEscuro
         // 
-        ModoClaroEscuro.BackColor = Color.Transparent;
+        ModoClaroEscuro.BackColor = Color.Gainsboro;
         ModoClaroEscuro.BackgroundImageLayout = ImageLayout.Stretch;
+        ModoClaroEscuro.FlatAppearance.BorderSize = 0;
+        ModoClaroEscuro.FlatStyle = FlatStyle.Flat;
         ModoClaroEscuro.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         ModoClaroEscuro.Location = new Point(695, 12);
         ModoClaroEscuro.Name = "ModoClaroEscuro";
@@ -523,13 +131,14 @@ partial class FormJogo
         // 
         // btnReiniciar
         // 
-        btnReiniciar.BackColor = Color.Transparent;
+        btnReiniciar.BackColor = Color.Gainsboro;
         btnReiniciar.FlatAppearance.BorderColor = Color.Silver;
+        btnReiniciar.FlatAppearance.BorderSize = 0;
         btnReiniciar.FlatStyle = FlatStyle.Flat;
         btnReiniciar.Font = new Font("MS Reference Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btnReiniciar.Location = new Point(715, 698);
+        btnReiniciar.Location = new Point(705, 699);
         btnReiniciar.Name = "btnReiniciar";
-        btnReiniciar.Size = new Size(500, 75);
+        btnReiniciar.Size = new Size(498, 75);
         btnReiniciar.TabIndex = 2;
         btnReiniciar.Text = "Reiniciar";
         btnReiniciar.UseVisualStyleBackColor = false;
@@ -560,35 +169,41 @@ partial class FormJogo
         // 
         // aceitarDica
         // 
+        aceitarDica.BackColor = Color.Gainsboro;
+        aceitarDica.FlatAppearance.BorderSize = 0;
+        aceitarDica.FlatStyle = FlatStyle.Flat;
         aceitarDica.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         aceitarDica.Location = new Point(131, 460);
         aceitarDica.Name = "aceitarDica";
         aceitarDica.Size = new Size(204, 63);
         aceitarDica.TabIndex = 6;
         aceitarDica.Text = "Aceitar";
-        aceitarDica.UseVisualStyleBackColor = true;
+        aceitarDica.UseVisualStyleBackColor = false;
         aceitarDica.Visible = false;
         aceitarDica.Click += aceitarDica_Click;
         // 
         // negarDica
         // 
+        negarDica.BackColor = Color.Gainsboro;
+        negarDica.FlatAppearance.BorderSize = 0;
+        negarDica.FlatStyle = FlatStyle.Flat;
         negarDica.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
         negarDica.Location = new Point(383, 460);
         negarDica.Name = "negarDica";
         negarDica.Size = new Size(204, 63);
         negarDica.TabIndex = 7;
         negarDica.Text = "Recusar";
-        negarDica.UseVisualStyleBackColor = true;
+        negarDica.UseVisualStyleBackColor = false;
         negarDica.Visible = false;
         negarDica.Click += negarDica_Click;
         // 
         // videoView1
         // 
         videoView1.BackColor = Color.Gray;
-        videoView1.Location = new Point(1366, 88);
+        videoView1.Location = new Point(1366, 77);
         videoView1.MediaPlayer = null;
         videoView1.Name = "videoView1";
-        videoView1.Size = new Size(440, 712);
+        videoView1.Size = new Size(460, 712);
         videoView1.TabIndex = 10;
         videoView1.Text = "videoView1";
         videoView1.Visible = false;
@@ -597,7 +212,7 @@ partial class FormJogo
         // 
         musica1.AutoSize = true;
         musica1.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica1.Location = new Point(1348, 12);
+        musica1.Location = new Point(1366, 9);
         musica1.Name = "musica1";
         musica1.Size = new Size(144, 28);
         musica1.TabIndex = 11;
@@ -610,7 +225,7 @@ partial class FormJogo
         // 
         musica2.AutoSize = true;
         musica2.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica2.Location = new Point(1507, 12);
+        musica2.Location = new Point(1511, 9);
         musica2.Name = "musica2";
         musica2.Size = new Size(315, 28);
         musica2.TabIndex = 12;
@@ -623,7 +238,7 @@ partial class FormJogo
         // 
         musica3.AutoSize = true;
         musica3.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica3.Location = new Point(1348, 46);
+        musica3.Location = new Point(1366, 43);
         musica3.Name = "musica3";
         musica3.Size = new Size(206, 28);
         musica3.TabIndex = 13;
@@ -636,7 +251,7 @@ partial class FormJogo
         // 
         musica4.AutoSize = true;
         musica4.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica4.Location = new Point(1631, 46);
+        musica4.Location = new Point(1635, 43);
         musica4.Name = "musica4";
         musica4.Size = new Size(191, 28);
         musica4.TabIndex = 14;
@@ -648,65 +263,32 @@ partial class FormJogo
         // ouvirMusic
         // 
         ouvirMusic.Appearance = Appearance.Button;
-        ouvirMusic.BackColor = Color.Transparent;
+        ouvirMusic.BackColor = Color.Gainsboro;
+        ouvirMusic.FlatAppearance.BorderSize = 0;
+        ouvirMusic.FlatStyle = FlatStyle.Flat;
         ouvirMusic.Font = new Font("Microsoft Sans Serif", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
+        ouvirMusic.ForeColor = Color.Transparent;
         ouvirMusic.Location = new Point(1155, 12);
         ouvirMusic.Name = "ouvirMusic";
         ouvirMusic.Size = new Size(60, 60);
         ouvirMusic.TabIndex = 15;
         ouvirMusic.TextAlign = ContentAlignment.MiddleCenter;
         ouvirMusic.UseVisualStyleBackColor = false;
-        ouvirMusic.UseWaitCursor = true;
         ouvirMusic.CheckedChanged += Musica_Click;
         // 
         // dica
         // 
-        dica.BackColor = Color.Transparent;
+        dica.BackColor = Color.Gainsboro;
         dica.BackgroundImageLayout = ImageLayout.Center;
+        dica.FlatAppearance.BorderSize = 0;
+        dica.FlatStyle = FlatStyle.Flat;
+        dica.Image = Properties.Resources.dicaValt;
         dica.Location = new Point(629, 12);
         dica.Name = "dica";
         dica.Size = new Size(60, 60);
         dica.TabIndex = 16;
         dica.UseVisualStyleBackColor = false;
         dica.Click += dica_Click;
-        // 
-        // jpbTeclado
-        // 
-        jpbTeclado.BackColor = Color.Transparent;
-        jpbTeclado.Controls.Add(btnEnter);
-        jpbTeclado.Controls.Add(btnM);
-        jpbTeclado.Controls.Add(btnN);
-        jpbTeclado.Controls.Add(btnB);
-        jpbTeclado.Controls.Add(btnV);
-        jpbTeclado.Controls.Add(btnC);
-        jpbTeclado.Controls.Add(btnX);
-        jpbTeclado.Controls.Add(btnZ);
-        jpbTeclado.Controls.Add(backSpace);
-        jpbTeclado.Controls.Add(btnL);
-        jpbTeclado.Controls.Add(btnK);
-        jpbTeclado.Controls.Add(btnJ);
-        jpbTeclado.Controls.Add(btnH);
-        jpbTeclado.Controls.Add(btnG);
-        jpbTeclado.Controls.Add(btnF);
-        jpbTeclado.Controls.Add(btnD);
-        jpbTeclado.Controls.Add(btnS);
-        jpbTeclado.Controls.Add(btnA);
-        jpbTeclado.Controls.Add(btnP);
-        jpbTeclado.Controls.Add(btnO);
-        jpbTeclado.Controls.Add(btnI);
-        jpbTeclado.Controls.Add(btnU);
-        jpbTeclado.Controls.Add(btnY);
-        jpbTeclado.Controls.Add(btnT);
-        jpbTeclado.Controls.Add(btnR);
-        jpbTeclado.Controls.Add(btnE);
-        jpbTeclado.Controls.Add(btnW);
-        jpbTeclado.Controls.Add(btnQ);
-        jpbTeclado.Location = new Point(460, 796);
-        jpbTeclado.Name = "jpbTeclado";
-        jpbTeclado.Size = new Size(1000, 233);
-        jpbTeclado.TabIndex = 1;
-        jpbTeclado.TabStop = false;
-        jpbTeclado.Text = "Teclado";
         // 
         // btn65
         // 
@@ -719,7 +301,7 @@ partial class FormJogo
         btn65.Size = new Size(80, 80);
         btn65.TabIndex = 59;
         btn65.UseVisualStyleBackColor = false;
-        btn65.Click += btnTeclado_Click;
+        btn65.Click += btnColuna5_Click;
         // 
         // btn64
         // 
@@ -732,6 +314,7 @@ partial class FormJogo
         btn64.Size = new Size(80, 80);
         btn64.TabIndex = 58;
         btn64.UseVisualStyleBackColor = false;
+        btn64.Click += btnColuna4_Click;
         // 
         // btn63
         // 
@@ -744,6 +327,7 @@ partial class FormJogo
         btn63.Size = new Size(80, 80);
         btn63.TabIndex = 57;
         btn63.UseVisualStyleBackColor = false;
+        btn63.Click += btnColuna3_Click;
         // 
         // btn62
         // 
@@ -756,6 +340,7 @@ partial class FormJogo
         btn62.Size = new Size(80, 80);
         btn62.TabIndex = 56;
         btn62.UseVisualStyleBackColor = false;
+        btn62.Click += btnColuna2_Click;
         // 
         // btn61
         // 
@@ -768,6 +353,7 @@ partial class FormJogo
         btn61.Size = new Size(80, 80);
         btn61.TabIndex = 55;
         btn61.UseVisualStyleBackColor = false;
+        btn61.Click += btnColuna1_Click;
         // 
         // btn55
         // 
@@ -780,6 +366,7 @@ partial class FormJogo
         btn55.Size = new Size(80, 80);
         btn55.TabIndex = 54;
         btn55.UseVisualStyleBackColor = false;
+        btn55.Click += btnColuna5_Click;
         // 
         // btn54
         // 
@@ -792,6 +379,7 @@ partial class FormJogo
         btn54.Size = new Size(80, 80);
         btn54.TabIndex = 53;
         btn54.UseVisualStyleBackColor = false;
+        btn54.Click += btnColuna4_Click;
         // 
         // btn53
         // 
@@ -804,6 +392,7 @@ partial class FormJogo
         btn53.Size = new Size(80, 80);
         btn53.TabIndex = 52;
         btn53.UseVisualStyleBackColor = false;
+        btn53.Click += btnColuna3_Click;
         // 
         // btn52
         // 
@@ -816,6 +405,7 @@ partial class FormJogo
         btn52.Size = new Size(80, 80);
         btn52.TabIndex = 51;
         btn52.UseVisualStyleBackColor = false;
+        btn52.Click += btnColuna2_Click;
         // 
         // btn51
         // 
@@ -828,6 +418,7 @@ partial class FormJogo
         btn51.Size = new Size(80, 80);
         btn51.TabIndex = 50;
         btn51.UseVisualStyleBackColor = false;
+        btn51.Click += btnColuna1_Click;
         // 
         // btn45
         // 
@@ -840,6 +431,7 @@ partial class FormJogo
         btn45.Size = new Size(80, 80);
         btn45.TabIndex = 49;
         btn45.UseVisualStyleBackColor = false;
+        btn45.Click += btnColuna5_Click;
         // 
         // btn44
         // 
@@ -852,6 +444,7 @@ partial class FormJogo
         btn44.Size = new Size(80, 80);
         btn44.TabIndex = 48;
         btn44.UseVisualStyleBackColor = false;
+        btn44.Click += btnColuna4_Click;
         // 
         // btn43
         // 
@@ -864,6 +457,7 @@ partial class FormJogo
         btn43.Size = new Size(80, 80);
         btn43.TabIndex = 47;
         btn43.UseVisualStyleBackColor = false;
+        btn43.Click += btnColuna3_Click;
         // 
         // btn42
         // 
@@ -876,6 +470,7 @@ partial class FormJogo
         btn42.Size = new Size(80, 80);
         btn42.TabIndex = 46;
         btn42.UseVisualStyleBackColor = false;
+        btn42.Click += btnColuna2_Click;
         // 
         // btn41
         // 
@@ -888,6 +483,7 @@ partial class FormJogo
         btn41.Size = new Size(80, 80);
         btn41.TabIndex = 45;
         btn41.UseVisualStyleBackColor = false;
+        btn41.Click += btnColuna1_Click;
         // 
         // btn35
         // 
@@ -900,6 +496,7 @@ partial class FormJogo
         btn35.Size = new Size(80, 80);
         btn35.TabIndex = 44;
         btn35.UseVisualStyleBackColor = false;
+        btn35.Click += btnColuna5_Click;
         // 
         // btn34
         // 
@@ -912,6 +509,7 @@ partial class FormJogo
         btn34.Size = new Size(80, 80);
         btn34.TabIndex = 43;
         btn34.UseVisualStyleBackColor = false;
+        btn34.Click += btnColuna4_Click;
         // 
         // btn33
         // 
@@ -924,6 +522,7 @@ partial class FormJogo
         btn33.Size = new Size(80, 80);
         btn33.TabIndex = 42;
         btn33.UseVisualStyleBackColor = false;
+        btn33.Click += btnColuna3_Click;
         // 
         // btn32
         // 
@@ -936,6 +535,7 @@ partial class FormJogo
         btn32.Size = new Size(80, 80);
         btn32.TabIndex = 41;
         btn32.UseVisualStyleBackColor = false;
+        btn32.Click += btnColuna2_Click;
         // 
         // btn31
         // 
@@ -948,6 +548,7 @@ partial class FormJogo
         btn31.Size = new Size(80, 80);
         btn31.TabIndex = 40;
         btn31.UseVisualStyleBackColor = false;
+        btn31.Click += btnColuna1_Click;
         // 
         // btn25
         // 
@@ -960,6 +561,7 @@ partial class FormJogo
         btn25.Size = new Size(80, 80);
         btn25.TabIndex = 39;
         btn25.UseVisualStyleBackColor = false;
+        btn25.Click += btnColuna5_Click;
         // 
         // btn24
         // 
@@ -972,6 +574,7 @@ partial class FormJogo
         btn24.Size = new Size(80, 80);
         btn24.TabIndex = 38;
         btn24.UseVisualStyleBackColor = false;
+        btn24.Click += btnColuna4_Click;
         // 
         // btn23
         // 
@@ -984,6 +587,7 @@ partial class FormJogo
         btn23.Size = new Size(80, 80);
         btn23.TabIndex = 37;
         btn23.UseVisualStyleBackColor = false;
+        btn23.Click += btnColuna3_Click;
         // 
         // btn22
         // 
@@ -996,6 +600,7 @@ partial class FormJogo
         btn22.Size = new Size(80, 80);
         btn22.TabIndex = 36;
         btn22.UseVisualStyleBackColor = false;
+        btn22.Click += btnColuna2_Click;
         // 
         // btn21
         // 
@@ -1008,6 +613,7 @@ partial class FormJogo
         btn21.Size = new Size(80, 80);
         btn21.TabIndex = 35;
         btn21.UseVisualStyleBackColor = false;
+        btn21.Click += btnColuna1_Click;
         // 
         // btn15
         // 
@@ -1020,6 +626,7 @@ partial class FormJogo
         btn15.Size = new Size(80, 80);
         btn15.TabIndex = 34;
         btn15.UseVisualStyleBackColor = false;
+        btn15.Click += btnColuna5_Click;
         // 
         // btn14
         // 
@@ -1032,6 +639,7 @@ partial class FormJogo
         btn14.Size = new Size(80, 80);
         btn14.TabIndex = 33;
         btn14.UseVisualStyleBackColor = false;
+        btn14.Click += btnColuna4_Click;
         // 
         // btn13
         // 
@@ -1044,6 +652,7 @@ partial class FormJogo
         btn13.Size = new Size(80, 80);
         btn13.TabIndex = 32;
         btn13.UseVisualStyleBackColor = false;
+        btn13.Click += btnColuna3_Click;
         // 
         // btn12
         // 
@@ -1056,6 +665,7 @@ partial class FormJogo
         btn12.Size = new Size(80, 80);
         btn12.TabIndex = 31;
         btn12.UseVisualStyleBackColor = false;
+        btn12.Click += btnColuna2_Click;
         // 
         // btn11
         // 
@@ -1068,6 +678,427 @@ partial class FormJogo
         btn11.Size = new Size(80, 80);
         btn11.TabIndex = 30;
         btn11.UseVisualStyleBackColor = false;
+        btn11.Click += btnColuna1_Click;
+        // 
+        // btnEnter
+        // 
+        btnEnter.BackColor = Color.Gainsboro;
+        btnEnter.FlatAppearance.BorderColor = Color.Silver;
+        btnEnter.FlatAppearance.BorderSize = 0;
+        btnEnter.FlatStyle = FlatStyle.Flat;
+        btnEnter.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnEnter.Location = new Point(1190, 949);
+        btnEnter.Name = "btnEnter";
+        btnEnter.Size = new Size(120, 60);
+        btnEnter.TabIndex = 87;
+        btnEnter.Text = "Enter";
+        btnEnter.UseVisualStyleBackColor = false;
+        btnEnter.Click += btnEnter_Click;
+        // 
+        // btnM
+        // 
+        btnM.BackColor = Color.Gainsboro;
+        btnM.FlatAppearance.BorderColor = Color.Silver;
+        btnM.FlatAppearance.BorderSize = 0;
+        btnM.FlatStyle = FlatStyle.Flat;
+        btnM.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnM.Location = new Point(1104, 949);
+        btnM.Name = "btnM";
+        btnM.Size = new Size(80, 60);
+        btnM.TabIndex = 86;
+        btnM.Text = "M";
+        btnM.UseVisualStyleBackColor = false;
+        btnM.Click += btnTeclado_Click;
+        // 
+        // btnN
+        // 
+        btnN.BackColor = Color.Gainsboro;
+        btnN.FlatAppearance.BorderColor = Color.Silver;
+        btnN.FlatAppearance.BorderSize = 0;
+        btnN.FlatStyle = FlatStyle.Flat;
+        btnN.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnN.Location = new Point(1018, 949);
+        btnN.Name = "btnN";
+        btnN.Size = new Size(80, 60);
+        btnN.TabIndex = 85;
+        btnN.Text = "N";
+        btnN.UseVisualStyleBackColor = false;
+        btnN.Click += btnTeclado_Click;
+        // 
+        // btnB
+        // 
+        btnB.BackColor = Color.Gainsboro;
+        btnB.FlatAppearance.BorderColor = Color.Silver;
+        btnB.FlatAppearance.BorderSize = 0;
+        btnB.FlatStyle = FlatStyle.Flat;
+        btnB.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnB.Location = new Point(932, 949);
+        btnB.Name = "btnB";
+        btnB.Size = new Size(80, 60);
+        btnB.TabIndex = 84;
+        btnB.Text = "B";
+        btnB.UseVisualStyleBackColor = false;
+        btnB.Click += btnTeclado_Click;
+        // 
+        // btnV
+        // 
+        btnV.BackColor = Color.Gainsboro;
+        btnV.FlatAppearance.BorderColor = Color.Silver;
+        btnV.FlatAppearance.BorderSize = 0;
+        btnV.FlatStyle = FlatStyle.Flat;
+        btnV.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnV.Location = new Point(846, 949);
+        btnV.Name = "btnV";
+        btnV.Size = new Size(80, 60);
+        btnV.TabIndex = 83;
+        btnV.Text = "V";
+        btnV.UseVisualStyleBackColor = false;
+        btnV.Click += btnTeclado_Click;
+        // 
+        // btnC
+        // 
+        btnC.BackColor = Color.Gainsboro;
+        btnC.FlatAppearance.BorderColor = Color.Silver;
+        btnC.FlatAppearance.BorderSize = 0;
+        btnC.FlatStyle = FlatStyle.Flat;
+        btnC.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnC.Location = new Point(761, 949);
+        btnC.Name = "btnC";
+        btnC.Size = new Size(80, 60);
+        btnC.TabIndex = 82;
+        btnC.Text = "C";
+        btnC.UseVisualStyleBackColor = false;
+        btnC.Click += btnTeclado_Click;
+        // 
+        // btnX
+        // 
+        btnX.BackColor = Color.Gainsboro;
+        btnX.FlatAppearance.BorderColor = Color.Silver;
+        btnX.FlatAppearance.BorderSize = 0;
+        btnX.FlatStyle = FlatStyle.Flat;
+        btnX.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnX.Location = new Point(675, 949);
+        btnX.Name = "btnX";
+        btnX.Size = new Size(80, 60);
+        btnX.TabIndex = 81;
+        btnX.Text = "X";
+        btnX.UseVisualStyleBackColor = false;
+        btnX.Click += btnTeclado_Click;
+        // 
+        // btnZ
+        // 
+        btnZ.BackColor = Color.Gainsboro;
+        btnZ.FlatAppearance.BorderColor = Color.Silver;
+        btnZ.FlatAppearance.BorderSize = 0;
+        btnZ.FlatStyle = FlatStyle.Flat;
+        btnZ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnZ.Location = new Point(589, 949);
+        btnZ.Name = "btnZ";
+        btnZ.Size = new Size(80, 60);
+        btnZ.TabIndex = 80;
+        btnZ.Text = "Z";
+        btnZ.UseVisualStyleBackColor = false;
+        btnZ.Click += btnTeclado_Click;
+        // 
+        // backSpace
+        // 
+        backSpace.BackColor = Color.Gainsboro;
+        backSpace.FlatAppearance.BorderColor = Color.Silver;
+        backSpace.FlatAppearance.BorderSize = 0;
+        backSpace.FlatStyle = FlatStyle.Flat;
+        backSpace.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        backSpace.Location = new Point(1307, 883);
+        backSpace.Name = "backSpace";
+        backSpace.Size = new Size(100, 60);
+        backSpace.TabIndex = 79;
+        backSpace.Text = "⌫";
+        backSpace.UseVisualStyleBackColor = false;
+        backSpace.Click += btnBack_Click;
+        // 
+        // btnL
+        // 
+        btnL.BackColor = Color.Gainsboro;
+        btnL.FlatAppearance.BorderColor = Color.Silver;
+        btnL.FlatAppearance.BorderSize = 0;
+        btnL.FlatStyle = FlatStyle.Flat;
+        btnL.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnL.Location = new Point(1221, 883);
+        btnL.Name = "btnL";
+        btnL.Size = new Size(80, 60);
+        btnL.TabIndex = 78;
+        btnL.Text = "L";
+        btnL.UseVisualStyleBackColor = false;
+        btnL.Click += btnTeclado_Click;
+        // 
+        // btnK
+        // 
+        btnK.BackColor = Color.Gainsboro;
+        btnK.FlatAppearance.BorderColor = Color.Silver;
+        btnK.FlatAppearance.BorderSize = 0;
+        btnK.FlatStyle = FlatStyle.Flat;
+        btnK.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnK.Location = new Point(1135, 883);
+        btnK.Name = "btnK";
+        btnK.Size = new Size(80, 60);
+        btnK.TabIndex = 77;
+        btnK.Text = "K";
+        btnK.UseVisualStyleBackColor = false;
+        btnK.Click += btnTeclado_Click;
+        // 
+        // btnJ
+        // 
+        btnJ.BackColor = Color.Gainsboro;
+        btnJ.FlatAppearance.BorderColor = Color.Silver;
+        btnJ.FlatAppearance.BorderSize = 0;
+        btnJ.FlatStyle = FlatStyle.Flat;
+        btnJ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnJ.Location = new Point(1049, 883);
+        btnJ.Name = "btnJ";
+        btnJ.Size = new Size(80, 60);
+        btnJ.TabIndex = 76;
+        btnJ.Text = "J";
+        btnJ.UseVisualStyleBackColor = false;
+        btnJ.Click += btnTeclado_Click;
+        // 
+        // btnH
+        // 
+        btnH.BackColor = Color.Gainsboro;
+        btnH.FlatAppearance.BorderColor = Color.Silver;
+        btnH.FlatAppearance.BorderSize = 0;
+        btnH.FlatStyle = FlatStyle.Flat;
+        btnH.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnH.Location = new Point(963, 883);
+        btnH.Name = "btnH";
+        btnH.Size = new Size(80, 60);
+        btnH.TabIndex = 75;
+        btnH.Text = "H";
+        btnH.UseVisualStyleBackColor = false;
+        btnH.Click += btnTeclado_Click;
+        // 
+        // btnG
+        // 
+        btnG.BackColor = Color.Gainsboro;
+        btnG.FlatAppearance.BorderColor = Color.Silver;
+        btnG.FlatAppearance.BorderSize = 0;
+        btnG.FlatStyle = FlatStyle.Flat;
+        btnG.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnG.Location = new Point(877, 883);
+        btnG.Name = "btnG";
+        btnG.Size = new Size(80, 60);
+        btnG.TabIndex = 74;
+        btnG.Text = "G";
+        btnG.UseVisualStyleBackColor = false;
+        btnG.Click += btnTeclado_Click;
+        // 
+        // btnF
+        // 
+        btnF.BackColor = Color.Gainsboro;
+        btnF.FlatAppearance.BorderColor = Color.Silver;
+        btnF.FlatAppearance.BorderSize = 0;
+        btnF.FlatStyle = FlatStyle.Flat;
+        btnF.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnF.Location = new Point(791, 883);
+        btnF.Name = "btnF";
+        btnF.Size = new Size(80, 60);
+        btnF.TabIndex = 73;
+        btnF.Text = "F";
+        btnF.UseVisualStyleBackColor = false;
+        btnF.Click += btnTeclado_Click;
+        // 
+        // btnD
+        // 
+        btnD.BackColor = Color.Gainsboro;
+        btnD.FlatAppearance.BorderColor = Color.Silver;
+        btnD.FlatAppearance.BorderSize = 0;
+        btnD.FlatStyle = FlatStyle.Flat;
+        btnD.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnD.Location = new Point(705, 883);
+        btnD.Name = "btnD";
+        btnD.Size = new Size(80, 60);
+        btnD.TabIndex = 72;
+        btnD.Text = "D";
+        btnD.UseVisualStyleBackColor = false;
+        btnD.Click += btnTeclado_Click;
+        // 
+        // btnS
+        // 
+        btnS.BackColor = Color.Gainsboro;
+        btnS.FlatAppearance.BorderColor = Color.Silver;
+        btnS.FlatAppearance.BorderSize = 0;
+        btnS.FlatStyle = FlatStyle.Flat;
+        btnS.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnS.Location = new Point(619, 883);
+        btnS.Name = "btnS";
+        btnS.Size = new Size(80, 60);
+        btnS.TabIndex = 71;
+        btnS.Text = "S";
+        btnS.UseVisualStyleBackColor = false;
+        btnS.Click += btnTeclado_Click;
+        // 
+        // btnA
+        // 
+        btnA.BackColor = Color.Gainsboro;
+        btnA.FlatAppearance.BorderColor = Color.Silver;
+        btnA.FlatAppearance.BorderSize = 0;
+        btnA.FlatStyle = FlatStyle.Flat;
+        btnA.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnA.Location = new Point(533, 883);
+        btnA.Name = "btnA";
+        btnA.Size = new Size(80, 60);
+        btnA.TabIndex = 70;
+        btnA.Text = "A";
+        btnA.UseVisualStyleBackColor = false;
+        btnA.Click += btnTeclado_Click;
+        // 
+        // btnP
+        // 
+        btnP.BackColor = Color.Gainsboro;
+        btnP.FlatAppearance.BorderColor = Color.Silver;
+        btnP.FlatAppearance.BorderSize = 0;
+        btnP.FlatStyle = FlatStyle.Flat;
+        btnP.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnP.Location = new Point(1282, 817);
+        btnP.Name = "btnP";
+        btnP.Size = new Size(80, 60);
+        btnP.TabIndex = 69;
+        btnP.Text = "P";
+        btnP.UseVisualStyleBackColor = false;
+        btnP.Click += btnTeclado_Click;
+        // 
+        // btnO
+        // 
+        btnO.BackColor = Color.Gainsboro;
+        btnO.FlatAppearance.BorderColor = Color.Silver;
+        btnO.FlatAppearance.BorderSize = 0;
+        btnO.FlatStyle = FlatStyle.Flat;
+        btnO.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnO.Location = new Point(1196, 817);
+        btnO.Name = "btnO";
+        btnO.Size = new Size(80, 60);
+        btnO.TabIndex = 68;
+        btnO.Text = "O";
+        btnO.UseVisualStyleBackColor = false;
+        btnO.Click += btnTeclado_Click;
+        // 
+        // btnI
+        // 
+        btnI.BackColor = Color.Gainsboro;
+        btnI.FlatAppearance.BorderColor = Color.Silver;
+        btnI.FlatAppearance.BorderSize = 0;
+        btnI.FlatStyle = FlatStyle.Flat;
+        btnI.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnI.Location = new Point(1110, 817);
+        btnI.Name = "btnI";
+        btnI.Size = new Size(80, 60);
+        btnI.TabIndex = 67;
+        btnI.Text = "I";
+        btnI.UseVisualStyleBackColor = false;
+        btnI.Click += btnTeclado_Click;
+        // 
+        // btnU
+        // 
+        btnU.BackColor = Color.Gainsboro;
+        btnU.FlatAppearance.BorderColor = Color.Silver;
+        btnU.FlatAppearance.BorderSize = 0;
+        btnU.FlatStyle = FlatStyle.Flat;
+        btnU.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnU.Location = new Point(1024, 817);
+        btnU.Name = "btnU";
+        btnU.Size = new Size(80, 60);
+        btnU.TabIndex = 66;
+        btnU.Text = "U";
+        btnU.UseVisualStyleBackColor = false;
+        btnU.Click += btnTeclado_Click;
+        // 
+        // btnY
+        // 
+        btnY.BackColor = Color.Gainsboro;
+        btnY.FlatAppearance.BorderColor = Color.Silver;
+        btnY.FlatAppearance.BorderSize = 0;
+        btnY.FlatStyle = FlatStyle.Flat;
+        btnY.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnY.Location = new Point(938, 817);
+        btnY.Name = "btnY";
+        btnY.Size = new Size(80, 60);
+        btnY.TabIndex = 65;
+        btnY.Text = "Y";
+        btnY.UseVisualStyleBackColor = false;
+        btnY.Click += btnTeclado_Click;
+        // 
+        // btnT
+        // 
+        btnT.BackColor = Color.Gainsboro;
+        btnT.FlatAppearance.BorderColor = Color.Silver;
+        btnT.FlatAppearance.BorderSize = 0;
+        btnT.FlatStyle = FlatStyle.Flat;
+        btnT.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnT.Location = new Point(852, 817);
+        btnT.Name = "btnT";
+        btnT.Size = new Size(80, 60);
+        btnT.TabIndex = 64;
+        btnT.Text = "T";
+        btnT.UseVisualStyleBackColor = false;
+        btnT.Click += btnTeclado_Click;
+        // 
+        // btnR
+        // 
+        btnR.BackColor = Color.Gainsboro;
+        btnR.FlatAppearance.BorderColor = Color.Silver;
+        btnR.FlatAppearance.BorderSize = 0;
+        btnR.FlatStyle = FlatStyle.Flat;
+        btnR.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnR.Location = new Point(766, 817);
+        btnR.Name = "btnR";
+        btnR.Size = new Size(80, 60);
+        btnR.TabIndex = 63;
+        btnR.Text = "R";
+        btnR.UseVisualStyleBackColor = false;
+        btnR.Click += btnTeclado_Click;
+        // 
+        // btnE
+        // 
+        btnE.BackColor = Color.Gainsboro;
+        btnE.FlatAppearance.BorderColor = Color.Silver;
+        btnE.FlatAppearance.BorderSize = 0;
+        btnE.FlatStyle = FlatStyle.Flat;
+        btnE.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnE.Location = new Point(680, 817);
+        btnE.Name = "btnE";
+        btnE.Size = new Size(80, 60);
+        btnE.TabIndex = 62;
+        btnE.Text = "E";
+        btnE.UseVisualStyleBackColor = false;
+        btnE.Click += btnTeclado_Click;
+        // 
+        // btnW
+        // 
+        btnW.BackColor = Color.Gainsboro;
+        btnW.FlatAppearance.BorderColor = Color.Silver;
+        btnW.FlatAppearance.BorderSize = 0;
+        btnW.FlatStyle = FlatStyle.Flat;
+        btnW.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnW.Location = new Point(594, 817);
+        btnW.Name = "btnW";
+        btnW.Size = new Size(80, 60);
+        btnW.TabIndex = 61;
+        btnW.Text = "W";
+        btnW.UseVisualStyleBackColor = false;
+        btnW.Click += btnTeclado_Click;
+        // 
+        // btnQ
+        // 
+        btnQ.BackColor = Color.Gainsboro;
+        btnQ.FlatAppearance.BorderColor = Color.Silver;
+        btnQ.FlatAppearance.BorderSize = 0;
+        btnQ.FlatStyle = FlatStyle.Flat;
+        btnQ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
+        btnQ.Location = new Point(508, 817);
+        btnQ.Name = "btnQ";
+        btnQ.Size = new Size(80, 60);
+        btnQ.TabIndex = 60;
+        btnQ.Text = "Q";
+        btnQ.UseVisualStyleBackColor = false;
+        btnQ.Click += btnTeclado_Click;
         // 
         // FormJogo
         // 
@@ -1075,6 +1106,34 @@ partial class FormJogo
         AutoScaleMode = AutoScaleMode.Font;
         BackgroundImageLayout = ImageLayout.Stretch;
         ClientSize = new Size(1904, 1041);
+        Controls.Add(btnEnter);
+        Controls.Add(btnM);
+        Controls.Add(btnN);
+        Controls.Add(btnB);
+        Controls.Add(btnV);
+        Controls.Add(btnC);
+        Controls.Add(btnX);
+        Controls.Add(btnZ);
+        Controls.Add(backSpace);
+        Controls.Add(btnL);
+        Controls.Add(btnK);
+        Controls.Add(btnJ);
+        Controls.Add(btnH);
+        Controls.Add(btnG);
+        Controls.Add(btnF);
+        Controls.Add(btnD);
+        Controls.Add(btnS);
+        Controls.Add(btnA);
+        Controls.Add(btnP);
+        Controls.Add(btnO);
+        Controls.Add(btnI);
+        Controls.Add(btnU);
+        Controls.Add(btnY);
+        Controls.Add(btnT);
+        Controls.Add(btnR);
+        Controls.Add(btnE);
+        Controls.Add(btnW);
+        Controls.Add(btnQ);
         Controls.Add(btn65);
         Controls.Add(btn64);
         Controls.Add(btn63);
@@ -1119,7 +1178,7 @@ partial class FormJogo
         Controls.Add(pictureBox1);
         Controls.Add(label1);
         Controls.Add(btnReiniciar);
-        Controls.Add(jpbTeclado);
+        FormBorderStyle = FormBorderStyle.Fixed3D;
         KeyPreview = true;
         MaximizeBox = false;
         MinimizeBox = false;
@@ -1131,40 +1190,11 @@ partial class FormJogo
         KeyPress += FormJogo_KeyPress;
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ((System.ComponentModel.ISupportInitialize)videoView1).EndInit();
-        jpbTeclado.ResumeLayout(false);
         ResumeLayout(false);
         PerformLayout();
     }
 
     #endregion
-    private Button btnK;
-    private Button btnJ;
-    private Button btnH;
-    private Button btnG;
-    private Button btnF;
-    private Button btnD;
-    private Button btnS;
-    private Button btnA;
-    private Button btnP;
-    private Button btnO;
-    private Button btnI;
-    private Button btnU;
-    private Button btnY;
-    private Button btnT;
-    private Button btnR;
-    private Button btnE;
-    private Button btnW;
-    private Button btnQ;
-    private Button backSpace;
-    private Button btnL;
-    private Button btnEnter;
-    private Button btnM;
-    private Button btnN;
-    private Button btnB;
-    private Button btnV;
-    private Button btnC;
-    private Button btnX;
-    private Button btnZ;
     private Button btnReiniciar;
     private Label label1;
     private PictureBox pictureBox1;
@@ -1179,7 +1209,6 @@ partial class FormJogo
     private RadioButton musica4;
     private CheckBox ouvirMusic;
     private Button dica;
-    private GroupBox jpbTeclado;
     private Button btn65;
     private Button btn64;
     private Button btn63;
@@ -1210,4 +1239,32 @@ partial class FormJogo
     private Button btn13;
     private Button btn12;
     private Button btn11;
+    private Button btnEnter;
+    private Button btnM;
+    private Button btnN;
+    private Button btnB;
+    private Button btnV;
+    private Button btnC;
+    private Button btnX;
+    private Button btnZ;
+    private Button backSpace;
+    private Button btnL;
+    private Button btnK;
+    private Button btnJ;
+    private Button btnH;
+    private Button btnG;
+    private Button btnF;
+    private Button btnD;
+    private Button btnS;
+    private Button btnA;
+    private Button btnP;
+    private Button btnO;
+    private Button btnI;
+    private Button btnU;
+    private Button btnY;
+    private Button btnT;
+    private Button btnR;
+    private Button btnE;
+    private Button btnW;
+    private Button btnQ;
 }
