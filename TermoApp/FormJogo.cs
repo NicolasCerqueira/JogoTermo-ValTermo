@@ -40,7 +40,7 @@ namespace TermoApp
 
             if (ctrl is Button btn)
             {
-                btn.BackColor = corBotao;
+                btn.BackColor = corFundo;
                 btn.ForeColor = corTexto;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
@@ -149,7 +149,7 @@ namespace TermoApp
 
                 nomeButton = $"btn{linha}{coluna - 1}";
                 buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-                buttonTabuleiro.BackColor = Color.Transparent;
+                buttonTabuleiro.BackColor = Color.Gainsboro;
             }
             if (coluna > 5)
             {
@@ -174,7 +174,7 @@ namespace TermoApp
             var linha = termo.palavraAtual;
             var nomeButton = $"btn{linha}{coluna2}";
             var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Transparent;//cor da letra atual
+            buttonTabuleiro.BackColor = Color.G;//cor da letra atual
 
             // diminui a coluna para ir para a letra certa  que será apagada
             coluna--;
@@ -262,7 +262,7 @@ namespace TermoApp
             }
             var nomeButton = $"btn{linha}{coluna}";
             var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
-            buttonTabuleiro.BackColor = Color.Transparent;
+            buttonTabuleiro.BackColor = Color.Gainsboro;
 
             coluna = colunaAtual;
 
@@ -552,18 +552,18 @@ namespace TermoApp
         {
             int pos = 0;
             pos = termo.palavraAtual;
-            
-                pictureBox1.Visible = true;
-                pictureBox1.Image = Properties.Resources.MuitoFeliz;
-                labelValt.Visible = true;
-                aceitarDica.Visible = true;
-                negarDica.Visible = true;
 
-                //pictureBox1.Visible = false;
-                //labelValt.Visible = false;
-                //aceitarDica.Visible = false;
-                //negarDica.Visible = false;
-            
+            pictureBox1.Visible = true;
+            pictureBox1.Image = Properties.Resources.MuitoFeliz;
+            labelValt.Visible = true;
+            aceitarDica.Visible = true;
+            negarDica.Visible = true;
+
+            //pictureBox1.Visible = false;
+            //labelValt.Visible = false;
+            //aceitarDica.Visible = false;
+            //negarDica.Visible = false;
+
         }
     }
 }
