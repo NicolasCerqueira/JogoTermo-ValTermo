@@ -252,7 +252,14 @@ namespace TermoApp
         {
             if (termo.valtBreak == true) this.Close();
             if (termo.palavraAtual == tentativas) derrota();
-            if (termo.palavraAtual > tentativas || coluna <= 5) return;
+            if (termo.palavraAtual > tentativas) return;//|| coluna <= 5
+            if (coluna <= 5)
+            {
+                MessageBox.Show("A palavra deve ter 5 letras.",
+                                "", MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
 
             var palavra = string.Empty;
             for (int i = 1; i <= 5; i++)
@@ -260,6 +267,12 @@ namespace TermoApp
                 var nomeBotao = $"btn{termo.palavraAtual}{i}";
                 var botao = RetornaBotao(nomeBotao);
                 palavra += botao.Text;
+            }
+
+            if (!termo.palavraValida(palavra))
+            {
+                MessageBox.Show("Palavra não existe na lista!", "Palavra Inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
             termo.ChecaPalavra(palavra);

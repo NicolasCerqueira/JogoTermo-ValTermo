@@ -135,5 +135,17 @@
             palavraAtual++;
         }
 
+        /// <summary>
+        /// Verifica se a palavra fornecida existe na lista de palavras do jogo.
+        /// </summary>
+        /// <param name="palavra">A palavra a ser validada.</param>
+        /// <returns>True se a palavra for válida, False caso contrário.</returns>
+        public bool palavraValida(string palavra)
+        {
+            // Verifica se a lista de palavras carregada contém a palavra digitada.
+            // (Isso assume que a palavra e a lista estão na mesma caixa, ex: TUDO MAIÚSCULO)
+            return palavras.Contains(palavra);
+        }
+
     }
 }
