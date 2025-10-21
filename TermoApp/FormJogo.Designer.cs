@@ -96,7 +96,15 @@ partial class FormJogo
         btnE = new Button();
         btnW = new Button();
         btnQ = new Button();
+        grafico = new Button();
+        Borda = new Panel();
+        label2 = new Label();
+        FecharJogo = new Button();
+        estadosValt = new PictureBox();
+        fraseEstadoValt = new Label();
         ((System.ComponentModel.ISupportInitialize)videoView1).BeginInit();
+        Borda.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)estadosValt).BeginInit();
         SuspendLayout();
         // 
         // ModoClaroEscuro
@@ -106,7 +114,7 @@ partial class FormJogo
         ModoClaroEscuro.FlatAppearance.BorderSize = 0;
         ModoClaroEscuro.FlatStyle = FlatStyle.Flat;
         ModoClaroEscuro.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        ModoClaroEscuro.Location = new Point(695, 12);
+        ModoClaroEscuro.Location = new Point(687, 56);
         ModoClaroEscuro.Name = "ModoClaroEscuro";
         ModoClaroEscuro.Size = new Size(60, 60);
         ModoClaroEscuro.TabIndex = 28;
@@ -120,7 +128,7 @@ partial class FormJogo
         btnReiniciar.FlatAppearance.BorderSize = 0;
         btnReiniciar.FlatStyle = FlatStyle.Flat;
         btnReiniciar.Font = new Font("MS Reference Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-        btnReiniciar.Location = new Point(705, 699);
+        btnReiniciar.Location = new Point(697, 727);
         btnReiniciar.Name = "btnReiniciar";
         btnReiniciar.Size = new Size(498, 75);
         btnReiniciar.TabIndex = 2;
@@ -132,7 +140,7 @@ partial class FormJogo
         // 
         label1.AutoSize = true;
         label1.Font = new Font("MS Reference Sans Serif", 48F, FontStyle.Bold);
-        label1.Location = new Point(791, 27);
+        label1.Location = new Point(783, 71);
         label1.Name = "label1";
         label1.Size = new Size(347, 79);
         label1.TabIndex = 3;
@@ -141,7 +149,7 @@ partial class FormJogo
         // videoView1
         // 
         videoView1.BackColor = Color.Gray;
-        videoView1.Location = new Point(1366, 77);
+        videoView1.Location = new Point(1358, 121);
         videoView1.MediaPlayer = null;
         videoView1.Name = "videoView1";
         videoView1.Size = new Size(460, 712);
@@ -153,7 +161,7 @@ partial class FormJogo
         // 
         musica1.AutoSize = true;
         musica1.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica1.Location = new Point(1366, 9);
+        musica1.Location = new Point(1358, 53);
         musica1.Name = "musica1";
         musica1.Size = new Size(144, 28);
         musica1.TabIndex = 11;
@@ -166,7 +174,7 @@ partial class FormJogo
         // 
         musica2.AutoSize = true;
         musica2.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica2.Location = new Point(1511, 9);
+        musica2.Location = new Point(1503, 53);
         musica2.Name = "musica2";
         musica2.Size = new Size(315, 28);
         musica2.TabIndex = 12;
@@ -179,7 +187,7 @@ partial class FormJogo
         // 
         musica3.AutoSize = true;
         musica3.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica3.Location = new Point(1366, 43);
+        musica3.Location = new Point(1358, 87);
         musica3.Name = "musica3";
         musica3.Size = new Size(206, 28);
         musica3.TabIndex = 13;
@@ -192,7 +200,7 @@ partial class FormJogo
         // 
         musica4.AutoSize = true;
         musica4.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-        musica4.Location = new Point(1635, 43);
+        musica4.Location = new Point(1627, 87);
         musica4.Name = "musica4";
         musica4.Size = new Size(191, 28);
         musica4.TabIndex = 14;
@@ -209,7 +217,7 @@ partial class FormJogo
         ouvirMusic.FlatStyle = FlatStyle.Flat;
         ouvirMusic.Font = new Font("Microsoft Sans Serif", 11.9999981F, FontStyle.Regular, GraphicsUnit.Point, 0);
         ouvirMusic.ForeColor = Color.Transparent;
-        ouvirMusic.Location = new Point(1155, 12);
+        ouvirMusic.Location = new Point(1147, 56);
         ouvirMusic.Name = "ouvirMusic";
         ouvirMusic.Size = new Size(60, 60);
         ouvirMusic.TabIndex = 15;
@@ -224,7 +232,7 @@ partial class FormJogo
         dica.FlatAppearance.BorderSize = 0;
         dica.FlatStyle = FlatStyle.Flat;
         dica.Image = Properties.Resources.dicaValt;
-        dica.Location = new Point(629, 12);
+        dica.Location = new Point(621, 56);
         dica.Name = "dica";
         dica.Size = new Size(60, 60);
         dica.TabIndex = 16;
@@ -237,7 +245,7 @@ partial class FormJogo
         btn65.FlatAppearance.BorderSize = 0;
         btn65.FlatStyle = FlatStyle.Flat;
         btn65.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn65.Location = new Point(1089, 588);
+        btn65.Location = new Point(1081, 616);
         btn65.Name = "btn65";
         btn65.Size = new Size(80, 80);
         btn65.TabIndex = 59;
@@ -250,7 +258,7 @@ partial class FormJogo
         btn64.FlatAppearance.BorderSize = 0;
         btn64.FlatStyle = FlatStyle.Flat;
         btn64.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn64.Location = new Point(1003, 588);
+        btn64.Location = new Point(995, 616);
         btn64.Name = "btn64";
         btn64.Size = new Size(80, 80);
         btn64.TabIndex = 58;
@@ -263,7 +271,7 @@ partial class FormJogo
         btn63.FlatAppearance.BorderSize = 0;
         btn63.FlatStyle = FlatStyle.Flat;
         btn63.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn63.Location = new Point(917, 588);
+        btn63.Location = new Point(909, 616);
         btn63.Name = "btn63";
         btn63.Size = new Size(80, 80);
         btn63.TabIndex = 57;
@@ -276,7 +284,7 @@ partial class FormJogo
         btn62.FlatAppearance.BorderSize = 0;
         btn62.FlatStyle = FlatStyle.Flat;
         btn62.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn62.Location = new Point(831, 588);
+        btn62.Location = new Point(823, 616);
         btn62.Name = "btn62";
         btn62.Size = new Size(80, 80);
         btn62.TabIndex = 56;
@@ -289,7 +297,7 @@ partial class FormJogo
         btn61.FlatAppearance.BorderSize = 0;
         btn61.FlatStyle = FlatStyle.Flat;
         btn61.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn61.Location = new Point(745, 588);
+        btn61.Location = new Point(737, 616);
         btn61.Name = "btn61";
         btn61.Size = new Size(80, 80);
         btn61.TabIndex = 55;
@@ -302,7 +310,7 @@ partial class FormJogo
         btn55.FlatAppearance.BorderSize = 0;
         btn55.FlatStyle = FlatStyle.Flat;
         btn55.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn55.Location = new Point(1089, 502);
+        btn55.Location = new Point(1081, 530);
         btn55.Name = "btn55";
         btn55.Size = new Size(80, 80);
         btn55.TabIndex = 54;
@@ -315,7 +323,7 @@ partial class FormJogo
         btn54.FlatAppearance.BorderSize = 0;
         btn54.FlatStyle = FlatStyle.Flat;
         btn54.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn54.Location = new Point(1003, 502);
+        btn54.Location = new Point(995, 530);
         btn54.Name = "btn54";
         btn54.Size = new Size(80, 80);
         btn54.TabIndex = 53;
@@ -328,7 +336,7 @@ partial class FormJogo
         btn53.FlatAppearance.BorderSize = 0;
         btn53.FlatStyle = FlatStyle.Flat;
         btn53.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn53.Location = new Point(917, 502);
+        btn53.Location = new Point(909, 530);
         btn53.Name = "btn53";
         btn53.Size = new Size(80, 80);
         btn53.TabIndex = 52;
@@ -341,7 +349,7 @@ partial class FormJogo
         btn52.FlatAppearance.BorderSize = 0;
         btn52.FlatStyle = FlatStyle.Flat;
         btn52.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn52.Location = new Point(831, 502);
+        btn52.Location = new Point(823, 530);
         btn52.Name = "btn52";
         btn52.Size = new Size(80, 80);
         btn52.TabIndex = 51;
@@ -354,7 +362,7 @@ partial class FormJogo
         btn51.FlatAppearance.BorderSize = 0;
         btn51.FlatStyle = FlatStyle.Flat;
         btn51.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn51.Location = new Point(745, 502);
+        btn51.Location = new Point(737, 530);
         btn51.Name = "btn51";
         btn51.Size = new Size(80, 80);
         btn51.TabIndex = 50;
@@ -367,7 +375,7 @@ partial class FormJogo
         btn45.FlatAppearance.BorderSize = 0;
         btn45.FlatStyle = FlatStyle.Flat;
         btn45.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn45.Location = new Point(1089, 416);
+        btn45.Location = new Point(1081, 444);
         btn45.Name = "btn45";
         btn45.Size = new Size(80, 80);
         btn45.TabIndex = 49;
@@ -380,7 +388,7 @@ partial class FormJogo
         btn44.FlatAppearance.BorderSize = 0;
         btn44.FlatStyle = FlatStyle.Flat;
         btn44.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn44.Location = new Point(1003, 416);
+        btn44.Location = new Point(995, 444);
         btn44.Name = "btn44";
         btn44.Size = new Size(80, 80);
         btn44.TabIndex = 48;
@@ -393,7 +401,7 @@ partial class FormJogo
         btn43.FlatAppearance.BorderSize = 0;
         btn43.FlatStyle = FlatStyle.Flat;
         btn43.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn43.Location = new Point(917, 416);
+        btn43.Location = new Point(909, 444);
         btn43.Name = "btn43";
         btn43.Size = new Size(80, 80);
         btn43.TabIndex = 47;
@@ -406,7 +414,7 @@ partial class FormJogo
         btn42.FlatAppearance.BorderSize = 0;
         btn42.FlatStyle = FlatStyle.Flat;
         btn42.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn42.Location = new Point(831, 416);
+        btn42.Location = new Point(823, 444);
         btn42.Name = "btn42";
         btn42.Size = new Size(80, 80);
         btn42.TabIndex = 46;
@@ -419,7 +427,7 @@ partial class FormJogo
         btn41.FlatAppearance.BorderSize = 0;
         btn41.FlatStyle = FlatStyle.Flat;
         btn41.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn41.Location = new Point(745, 416);
+        btn41.Location = new Point(737, 444);
         btn41.Name = "btn41";
         btn41.Size = new Size(80, 80);
         btn41.TabIndex = 45;
@@ -432,7 +440,7 @@ partial class FormJogo
         btn35.FlatAppearance.BorderSize = 0;
         btn35.FlatStyle = FlatStyle.Flat;
         btn35.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn35.Location = new Point(1089, 330);
+        btn35.Location = new Point(1081, 358);
         btn35.Name = "btn35";
         btn35.Size = new Size(80, 80);
         btn35.TabIndex = 44;
@@ -445,7 +453,7 @@ partial class FormJogo
         btn34.FlatAppearance.BorderSize = 0;
         btn34.FlatStyle = FlatStyle.Flat;
         btn34.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn34.Location = new Point(1003, 330);
+        btn34.Location = new Point(995, 358);
         btn34.Name = "btn34";
         btn34.Size = new Size(80, 80);
         btn34.TabIndex = 43;
@@ -458,7 +466,7 @@ partial class FormJogo
         btn33.FlatAppearance.BorderSize = 0;
         btn33.FlatStyle = FlatStyle.Flat;
         btn33.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn33.Location = new Point(917, 330);
+        btn33.Location = new Point(909, 358);
         btn33.Name = "btn33";
         btn33.Size = new Size(80, 80);
         btn33.TabIndex = 42;
@@ -471,7 +479,7 @@ partial class FormJogo
         btn32.FlatAppearance.BorderSize = 0;
         btn32.FlatStyle = FlatStyle.Flat;
         btn32.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn32.Location = new Point(831, 330);
+        btn32.Location = new Point(823, 358);
         btn32.Name = "btn32";
         btn32.Size = new Size(80, 80);
         btn32.TabIndex = 41;
@@ -484,7 +492,7 @@ partial class FormJogo
         btn31.FlatAppearance.BorderSize = 0;
         btn31.FlatStyle = FlatStyle.Flat;
         btn31.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn31.Location = new Point(745, 330);
+        btn31.Location = new Point(737, 358);
         btn31.Name = "btn31";
         btn31.Size = new Size(80, 80);
         btn31.TabIndex = 40;
@@ -497,7 +505,7 @@ partial class FormJogo
         btn25.FlatAppearance.BorderSize = 0;
         btn25.FlatStyle = FlatStyle.Flat;
         btn25.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn25.Location = new Point(1089, 244);
+        btn25.Location = new Point(1081, 272);
         btn25.Name = "btn25";
         btn25.Size = new Size(80, 80);
         btn25.TabIndex = 39;
@@ -510,7 +518,7 @@ partial class FormJogo
         btn24.FlatAppearance.BorderSize = 0;
         btn24.FlatStyle = FlatStyle.Flat;
         btn24.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn24.Location = new Point(1003, 244);
+        btn24.Location = new Point(995, 272);
         btn24.Name = "btn24";
         btn24.Size = new Size(80, 80);
         btn24.TabIndex = 38;
@@ -523,7 +531,7 @@ partial class FormJogo
         btn23.FlatAppearance.BorderSize = 0;
         btn23.FlatStyle = FlatStyle.Flat;
         btn23.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn23.Location = new Point(917, 244);
+        btn23.Location = new Point(909, 272);
         btn23.Name = "btn23";
         btn23.Size = new Size(80, 80);
         btn23.TabIndex = 37;
@@ -536,7 +544,7 @@ partial class FormJogo
         btn22.FlatAppearance.BorderSize = 0;
         btn22.FlatStyle = FlatStyle.Flat;
         btn22.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn22.Location = new Point(831, 244);
+        btn22.Location = new Point(823, 272);
         btn22.Name = "btn22";
         btn22.Size = new Size(80, 80);
         btn22.TabIndex = 36;
@@ -549,7 +557,7 @@ partial class FormJogo
         btn21.FlatAppearance.BorderSize = 0;
         btn21.FlatStyle = FlatStyle.Flat;
         btn21.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn21.Location = new Point(745, 244);
+        btn21.Location = new Point(737, 272);
         btn21.Name = "btn21";
         btn21.Size = new Size(80, 80);
         btn21.TabIndex = 35;
@@ -562,7 +570,7 @@ partial class FormJogo
         btn15.FlatAppearance.BorderSize = 0;
         btn15.FlatStyle = FlatStyle.Flat;
         btn15.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn15.Location = new Point(1089, 158);
+        btn15.Location = new Point(1081, 186);
         btn15.Name = "btn15";
         btn15.Size = new Size(80, 80);
         btn15.TabIndex = 34;
@@ -575,7 +583,7 @@ partial class FormJogo
         btn14.FlatAppearance.BorderSize = 0;
         btn14.FlatStyle = FlatStyle.Flat;
         btn14.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn14.Location = new Point(1003, 158);
+        btn14.Location = new Point(995, 186);
         btn14.Name = "btn14";
         btn14.Size = new Size(80, 80);
         btn14.TabIndex = 33;
@@ -588,7 +596,7 @@ partial class FormJogo
         btn13.FlatAppearance.BorderSize = 0;
         btn13.FlatStyle = FlatStyle.Flat;
         btn13.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn13.Location = new Point(917, 158);
+        btn13.Location = new Point(909, 186);
         btn13.Name = "btn13";
         btn13.Size = new Size(80, 80);
         btn13.TabIndex = 32;
@@ -601,7 +609,7 @@ partial class FormJogo
         btn12.FlatAppearance.BorderSize = 0;
         btn12.FlatStyle = FlatStyle.Flat;
         btn12.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn12.Location = new Point(831, 158);
+        btn12.Location = new Point(823, 186);
         btn12.Name = "btn12";
         btn12.Size = new Size(80, 80);
         btn12.TabIndex = 31;
@@ -614,7 +622,7 @@ partial class FormJogo
         btn11.FlatAppearance.BorderSize = 0;
         btn11.FlatStyle = FlatStyle.Flat;
         btn11.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btn11.Location = new Point(745, 158);
+        btn11.Location = new Point(737, 186);
         btn11.Name = "btn11";
         btn11.Size = new Size(80, 80);
         btn11.TabIndex = 30;
@@ -628,7 +636,7 @@ partial class FormJogo
         btnEnter.FlatAppearance.BorderSize = 0;
         btnEnter.FlatStyle = FlatStyle.Flat;
         btnEnter.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnEnter.Location = new Point(1190, 949);
+        btnEnter.Location = new Point(1182, 977);
         btnEnter.Name = "btnEnter";
         btnEnter.Size = new Size(120, 60);
         btnEnter.TabIndex = 87;
@@ -643,7 +651,7 @@ partial class FormJogo
         btnM.FlatAppearance.BorderSize = 0;
         btnM.FlatStyle = FlatStyle.Flat;
         btnM.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnM.Location = new Point(1104, 949);
+        btnM.Location = new Point(1096, 977);
         btnM.Name = "btnM";
         btnM.Size = new Size(80, 60);
         btnM.TabIndex = 86;
@@ -658,7 +666,7 @@ partial class FormJogo
         btnN.FlatAppearance.BorderSize = 0;
         btnN.FlatStyle = FlatStyle.Flat;
         btnN.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnN.Location = new Point(1018, 949);
+        btnN.Location = new Point(1010, 977);
         btnN.Name = "btnN";
         btnN.Size = new Size(80, 60);
         btnN.TabIndex = 85;
@@ -673,7 +681,7 @@ partial class FormJogo
         btnB.FlatAppearance.BorderSize = 0;
         btnB.FlatStyle = FlatStyle.Flat;
         btnB.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnB.Location = new Point(932, 949);
+        btnB.Location = new Point(924, 977);
         btnB.Name = "btnB";
         btnB.Size = new Size(80, 60);
         btnB.TabIndex = 84;
@@ -688,7 +696,7 @@ partial class FormJogo
         btnV.FlatAppearance.BorderSize = 0;
         btnV.FlatStyle = FlatStyle.Flat;
         btnV.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnV.Location = new Point(846, 949);
+        btnV.Location = new Point(838, 977);
         btnV.Name = "btnV";
         btnV.Size = new Size(80, 60);
         btnV.TabIndex = 83;
@@ -703,7 +711,7 @@ partial class FormJogo
         btnC.FlatAppearance.BorderSize = 0;
         btnC.FlatStyle = FlatStyle.Flat;
         btnC.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnC.Location = new Point(761, 949);
+        btnC.Location = new Point(753, 977);
         btnC.Name = "btnC";
         btnC.Size = new Size(80, 60);
         btnC.TabIndex = 82;
@@ -718,7 +726,7 @@ partial class FormJogo
         btnX.FlatAppearance.BorderSize = 0;
         btnX.FlatStyle = FlatStyle.Flat;
         btnX.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnX.Location = new Point(675, 949);
+        btnX.Location = new Point(667, 977);
         btnX.Name = "btnX";
         btnX.Size = new Size(80, 60);
         btnX.TabIndex = 81;
@@ -733,7 +741,7 @@ partial class FormJogo
         btnZ.FlatAppearance.BorderSize = 0;
         btnZ.FlatStyle = FlatStyle.Flat;
         btnZ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnZ.Location = new Point(589, 949);
+        btnZ.Location = new Point(581, 977);
         btnZ.Name = "btnZ";
         btnZ.Size = new Size(80, 60);
         btnZ.TabIndex = 80;
@@ -748,7 +756,7 @@ partial class FormJogo
         backSpace.FlatAppearance.BorderSize = 0;
         backSpace.FlatStyle = FlatStyle.Flat;
         backSpace.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        backSpace.Location = new Point(1307, 883);
+        backSpace.Location = new Point(1299, 911);
         backSpace.Name = "backSpace";
         backSpace.Size = new Size(100, 60);
         backSpace.TabIndex = 79;
@@ -763,7 +771,7 @@ partial class FormJogo
         btnL.FlatAppearance.BorderSize = 0;
         btnL.FlatStyle = FlatStyle.Flat;
         btnL.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnL.Location = new Point(1221, 883);
+        btnL.Location = new Point(1213, 911);
         btnL.Name = "btnL";
         btnL.Size = new Size(80, 60);
         btnL.TabIndex = 78;
@@ -778,7 +786,7 @@ partial class FormJogo
         btnK.FlatAppearance.BorderSize = 0;
         btnK.FlatStyle = FlatStyle.Flat;
         btnK.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnK.Location = new Point(1135, 883);
+        btnK.Location = new Point(1127, 911);
         btnK.Name = "btnK";
         btnK.Size = new Size(80, 60);
         btnK.TabIndex = 77;
@@ -793,7 +801,7 @@ partial class FormJogo
         btnJ.FlatAppearance.BorderSize = 0;
         btnJ.FlatStyle = FlatStyle.Flat;
         btnJ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnJ.Location = new Point(1049, 883);
+        btnJ.Location = new Point(1041, 911);
         btnJ.Name = "btnJ";
         btnJ.Size = new Size(80, 60);
         btnJ.TabIndex = 76;
@@ -808,7 +816,7 @@ partial class FormJogo
         btnH.FlatAppearance.BorderSize = 0;
         btnH.FlatStyle = FlatStyle.Flat;
         btnH.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnH.Location = new Point(963, 883);
+        btnH.Location = new Point(955, 911);
         btnH.Name = "btnH";
         btnH.Size = new Size(80, 60);
         btnH.TabIndex = 75;
@@ -823,7 +831,7 @@ partial class FormJogo
         btnG.FlatAppearance.BorderSize = 0;
         btnG.FlatStyle = FlatStyle.Flat;
         btnG.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnG.Location = new Point(877, 883);
+        btnG.Location = new Point(869, 911);
         btnG.Name = "btnG";
         btnG.Size = new Size(80, 60);
         btnG.TabIndex = 74;
@@ -838,7 +846,7 @@ partial class FormJogo
         btnF.FlatAppearance.BorderSize = 0;
         btnF.FlatStyle = FlatStyle.Flat;
         btnF.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnF.Location = new Point(791, 883);
+        btnF.Location = new Point(783, 911);
         btnF.Name = "btnF";
         btnF.Size = new Size(80, 60);
         btnF.TabIndex = 73;
@@ -853,7 +861,7 @@ partial class FormJogo
         btnD.FlatAppearance.BorderSize = 0;
         btnD.FlatStyle = FlatStyle.Flat;
         btnD.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnD.Location = new Point(705, 883);
+        btnD.Location = new Point(697, 911);
         btnD.Name = "btnD";
         btnD.Size = new Size(80, 60);
         btnD.TabIndex = 72;
@@ -868,7 +876,7 @@ partial class FormJogo
         btnS.FlatAppearance.BorderSize = 0;
         btnS.FlatStyle = FlatStyle.Flat;
         btnS.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnS.Location = new Point(619, 883);
+        btnS.Location = new Point(611, 911);
         btnS.Name = "btnS";
         btnS.Size = new Size(80, 60);
         btnS.TabIndex = 71;
@@ -883,7 +891,7 @@ partial class FormJogo
         btnA.FlatAppearance.BorderSize = 0;
         btnA.FlatStyle = FlatStyle.Flat;
         btnA.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnA.Location = new Point(533, 883);
+        btnA.Location = new Point(525, 911);
         btnA.Name = "btnA";
         btnA.Size = new Size(80, 60);
         btnA.TabIndex = 70;
@@ -898,7 +906,7 @@ partial class FormJogo
         btnP.FlatAppearance.BorderSize = 0;
         btnP.FlatStyle = FlatStyle.Flat;
         btnP.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnP.Location = new Point(1282, 817);
+        btnP.Location = new Point(1274, 845);
         btnP.Name = "btnP";
         btnP.Size = new Size(80, 60);
         btnP.TabIndex = 69;
@@ -913,7 +921,7 @@ partial class FormJogo
         btnO.FlatAppearance.BorderSize = 0;
         btnO.FlatStyle = FlatStyle.Flat;
         btnO.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnO.Location = new Point(1196, 817);
+        btnO.Location = new Point(1188, 845);
         btnO.Name = "btnO";
         btnO.Size = new Size(80, 60);
         btnO.TabIndex = 68;
@@ -928,7 +936,7 @@ partial class FormJogo
         btnI.FlatAppearance.BorderSize = 0;
         btnI.FlatStyle = FlatStyle.Flat;
         btnI.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnI.Location = new Point(1110, 817);
+        btnI.Location = new Point(1102, 845);
         btnI.Name = "btnI";
         btnI.Size = new Size(80, 60);
         btnI.TabIndex = 67;
@@ -943,7 +951,7 @@ partial class FormJogo
         btnU.FlatAppearance.BorderSize = 0;
         btnU.FlatStyle = FlatStyle.Flat;
         btnU.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnU.Location = new Point(1024, 817);
+        btnU.Location = new Point(1016, 845);
         btnU.Name = "btnU";
         btnU.Size = new Size(80, 60);
         btnU.TabIndex = 66;
@@ -958,7 +966,7 @@ partial class FormJogo
         btnY.FlatAppearance.BorderSize = 0;
         btnY.FlatStyle = FlatStyle.Flat;
         btnY.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnY.Location = new Point(938, 817);
+        btnY.Location = new Point(930, 845);
         btnY.Name = "btnY";
         btnY.Size = new Size(80, 60);
         btnY.TabIndex = 65;
@@ -973,7 +981,7 @@ partial class FormJogo
         btnT.FlatAppearance.BorderSize = 0;
         btnT.FlatStyle = FlatStyle.Flat;
         btnT.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnT.Location = new Point(852, 817);
+        btnT.Location = new Point(844, 845);
         btnT.Name = "btnT";
         btnT.Size = new Size(80, 60);
         btnT.TabIndex = 64;
@@ -988,7 +996,7 @@ partial class FormJogo
         btnR.FlatAppearance.BorderSize = 0;
         btnR.FlatStyle = FlatStyle.Flat;
         btnR.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnR.Location = new Point(766, 817);
+        btnR.Location = new Point(758, 845);
         btnR.Name = "btnR";
         btnR.Size = new Size(80, 60);
         btnR.TabIndex = 63;
@@ -1003,7 +1011,7 @@ partial class FormJogo
         btnE.FlatAppearance.BorderSize = 0;
         btnE.FlatStyle = FlatStyle.Flat;
         btnE.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnE.Location = new Point(680, 817);
+        btnE.Location = new Point(672, 845);
         btnE.Name = "btnE";
         btnE.Size = new Size(80, 60);
         btnE.TabIndex = 62;
@@ -1018,7 +1026,7 @@ partial class FormJogo
         btnW.FlatAppearance.BorderSize = 0;
         btnW.FlatStyle = FlatStyle.Flat;
         btnW.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnW.Location = new Point(594, 817);
+        btnW.Location = new Point(586, 845);
         btnW.Name = "btnW";
         btnW.Size = new Size(80, 60);
         btnW.TabIndex = 61;
@@ -1033,7 +1041,7 @@ partial class FormJogo
         btnQ.FlatAppearance.BorderSize = 0;
         btnQ.FlatStyle = FlatStyle.Flat;
         btnQ.Font = new Font("MS Reference Sans Serif", 15.75F, FontStyle.Bold);
-        btnQ.Location = new Point(508, 817);
+        btnQ.Location = new Point(500, 845);
         btnQ.Name = "btnQ";
         btnQ.Size = new Size(80, 60);
         btnQ.TabIndex = 60;
@@ -1041,12 +1049,80 @@ partial class FormJogo
         btnQ.UseVisualStyleBackColor = false;
         btnQ.Click += btnTeclado_Click;
         // 
+        // grafico
+        // 
+        grafico.BackColor = Color.Gainsboro;
+        grafico.FlatAppearance.BorderSize = 0;
+        grafico.FlatStyle = FlatStyle.Flat;
+        grafico.Image = Properties.Resources.grafico;
+        grafico.Location = new Point(1213, 56);
+        grafico.Name = "grafico";
+        grafico.Size = new Size(60, 60);
+        grafico.TabIndex = 88;
+        grafico.UseVisualStyleBackColor = false;
+        grafico.Click += grafico_Click;
+        // 
+        // Borda
+        // 
+        Borda.Controls.Add(label2);
+        Borda.Controls.Add(FecharJogo);
+        Borda.Dock = DockStyle.Top;
+        Borda.Location = new Point(0, 0);
+        Borda.Name = "Borda";
+        Borda.Size = new Size(1904, 29);
+        Borda.TabIndex = 89;
+        // 
+        // label2
+        // 
+        label2.AutoSize = true;
+        label2.Font = new Font("Segoe UI", 15F);
+        label2.Location = new Point(0, 0);
+        label2.Name = "label2";
+        label2.Size = new Size(92, 28);
+        label2.TabIndex = 1;
+        label2.Text = "ValTermo";
+        // 
+        // FecharJogo
+        // 
+        FecharJogo.BackColor = Color.Transparent;
+        FecharJogo.FlatAppearance.BorderSize = 0;
+        FecharJogo.FlatStyle = FlatStyle.Flat;
+        FecharJogo.Location = new Point(1879, 0);
+        FecharJogo.Name = "FecharJogo";
+        FecharJogo.Size = new Size(25, 25);
+        FecharJogo.TabIndex = 0;
+        FecharJogo.UseVisualStyleBackColor = false;
+        FecharJogo.Click += FecharJogo_Click;
+        // 
+        // estadosValt
+        // 
+        estadosValt.Location = new Point(75, 186);
+        estadosValt.Name = "estadosValt";
+        estadosValt.Size = new Size(591, 387);
+        estadosValt.SizeMode = PictureBoxSizeMode.StretchImage;
+        estadosValt.TabIndex = 90;
+        estadosValt.TabStop = false;
+        // 
+        // fraseEstadoValt
+        // 
+        fraseEstadoValt.BackColor = Color.Transparent;
+        fraseEstadoValt.Font = new Font("MS Reference Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+        fraseEstadoValt.Location = new Point(70, 576);
+        fraseEstadoValt.Name = "fraseEstadoValt";
+        fraseEstadoValt.Size = new Size(596, 48);
+        fraseEstadoValt.TabIndex = 91;
+        fraseEstadoValt.TextAlign = ContentAlignment.MiddleCenter;
+        // 
         // FormJogo
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
         BackgroundImageLayout = ImageLayout.Stretch;
-        ClientSize = new Size(1904, 1041);
+        ClientSize = new Size(1904, 1094);
+        Controls.Add(fraseEstadoValt);
+        Controls.Add(estadosValt);
+        Controls.Add(Borda);
+        Controls.Add(grafico);
         Controls.Add(btnEnter);
         Controls.Add(btnM);
         Controls.Add(btnN);
@@ -1123,9 +1199,13 @@ partial class FormJogo
         StartPosition = FormStartPosition.CenterScreen;
         Text = "ValTermo";
         WindowState = FormWindowState.Maximized;
+        FormClosed += FecharForms;
         KeyDown += FormJogo_KeyDown;
         KeyPress += FormJogo_KeyPress;
         ((System.ComponentModel.ISupportInitialize)videoView1).EndInit();
+        Borda.ResumeLayout(false);
+        Borda.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)estadosValt).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -1199,4 +1279,10 @@ partial class FormJogo
     private Button btnE;
     private Button btnW;
     private Button btnQ;
+    private Button grafico;
+    private Panel Borda;
+    private Button FecharJogo;
+    private Label label2;
+    private PictureBox estadosValt;
+    private Label fraseEstadoValt;
 }

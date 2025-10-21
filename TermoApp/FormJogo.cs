@@ -49,7 +49,11 @@ namespace TermoApp
             Color corBotao = Color.FromArgb(72, 79, 109);
             Color corTexto = Color.White;
 
+            Borda.BackColor = Color.FromArgb(40, 42, 58);
             this.BackColor = corFundo;
+
+            FecharJogo.BackColor = Color.Transparent;
+            FecharJogo.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
 
             if (ctrl is Button btn)
             {
@@ -85,7 +89,11 @@ namespace TermoApp
 
         private void AplicarTemaClaro(Control ctrl)
         {
+            Borda.BackColor = SystemColors.Control;
             this.BackColor = Color.White;
+
+            FecharJogo.BackColor = Color.Transparent;
+            FecharJogo.FlatAppearance.MouseOverBackColor = Color.FromArgb(255, 100, 100);
 
             if (ctrl is Button btn)
             {
@@ -96,7 +104,6 @@ namespace TermoApp
                 btn.FlatAppearance.BorderColor = Color.LightGray;
                 ouvirMusic.BackColor = SystemColors.Control;
                 ouvirMusic.ForeColor = Color.Black;
-
             }
             else if (ctrl is Label lbl)
             {
@@ -183,6 +190,7 @@ namespace TermoApp
         private void btnTeclado_Click(object sender, EventArgs e)
         {
             if (coluna > 5 || termo.palavraAtual > tentativas) return;
+            if (termo.JogoFinalizado) return;
             // Botão do Teclado que foi clicado
             var button = (Button)sender;
             var linha = termo.palavraAtual;
@@ -242,8 +250,9 @@ namespace TermoApp
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            //if(termo.valtBreak == true) this.Close();  
+            if (termo.valtBreak == true) this.Close();
             if (termo.palavraAtual > tentativas || coluna <= 5) return;
+
             var palavra = string.Empty;
             for (int i = 1; i <= 5; i++)
             {
@@ -251,35 +260,56 @@ namespace TermoApp
                 var botao = RetornaBotao(nomeBotao);
                 palavra += botao.Text;
             }
+
             termo.ChecaPalavra(palavra);
+
             if (termo.valtBreak == true)
             {
                 this.Close();
                 return;
             }
+
             AtualizaTabuleiro();
             coluna = 1;
+            if (!termo.JogoFinalizado) estadoValt();
             if (termo.JogoFinalizado)
             {
-                MessageBox.Show("Parabéns você passou pelo Valtermir," +
-                      " nos veremos semestre que vem!",
-                                "VelTermo", MessageBoxButtons.OK,
-                                MessageBoxIcon.Exclamation);
-                tentativas = termo.palavraAtual - 1;
-                termo.JogoFinalizado = false;
-                FormVitoria formVit = new FormVitoria();
-                formVit.Show();
+                Settings.Default.JogosTotais++;
 
+                if (palavra.ToUpper() == termo.palavraSorteada.ToUpper())
+                {
+                    Settings.Default.VitoriasTotais++;
+                    Settings.Default.SequenciaAtual++;
+
+                    MessageBox.Show("Parabéns você passou pelo Valtermir," +
+                                    " nos veremos semestre que vem!",
+                                    "VelTermo", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
+
+                    FormVitoria formValt = new FormVitoria();
+                    tentativas = termo.palavraAtual - 1;
+                    formValt.Show();
+                }
+                else
+                {
+                    Settings.Default.Derrotas++;
+                    Settings.Default.SequenciaAtual = 0;
+
+                    MessageBox.Show($"Você perdeu", "VelTermo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                Settings.Default.Save();
+
+                termo.JogoFinalizado = false;
             }
 
-            //muda o indicador da letra que esta sendo editada
             if (termo.palavraAtual <= tentativas)
             {
                 var linha = termo.palavraAtual;
                 var nomeButton = $"btn{linha}{1}";
                 var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
                 corDestaqueClaro(buttonTabuleiro);
-                for (int i = 0; i <= 3; i++) Valt_Click(sender, e);
+                for (int i = 0; i <= 2; i++) Valt_Click(sender, e);
             }
         }
 
@@ -336,31 +366,26 @@ namespace TermoApp
         private void btnColuna1_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(1);
-            Valt_Click(sender, e);
         }
 
         private void btnColuna2_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(2);
-            Valt_Click(sender, e);
         }
 
         private void btnColuna3_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(3);
-            Valt_Click(sender, e);
         }
 
         private void btnColuna4_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(4);
-            Valt_Click(sender, e);
         }
 
         private void btnColuna5_Click(object sender, EventArgs e)
         {
             atualizaCorParaBtnColuna(5);
-            Valt_Click(sender, e);
         }
 
         private void btnReiniciar_Click(object sender, EventArgs e)
@@ -579,7 +604,56 @@ namespace TermoApp
         {
             FormDicaValt formDica = new FormDicaValt(this);
             formDica.Show();
+        }
 
+        private void grafico_Click(object sender, EventArgs e)
+        {
+            int jogos = Settings.Default.JogosTotais;
+            int vitorias = Settings.Default.VitoriasTotais;
+            int sequencia = Settings.Default.SequenciaAtual;
+            int derrotas = Settings.Default.Derrotas;
+
+            Grafico formGrafico = new Grafico(jogos, vitorias, sequencia, derrotas);
+
+            formGrafico.ShowDialog();
+        }
+
+        //Resetar estatísticas ao fechar o jogo
+        private void FecharForms(object sender, FormClosedEventArgs e)
+        {
+            Settings.Default.Reset();
+        }
+
+        private void FecharJogo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void estadoValt()
+        {
+            switch (termo.palavraAtual)
+            {
+                case 2: 
+                    estadosValt.Image = Properties.Resources.estado01;
+                    fraseEstadoValt.Text = "Seus erros me divetem kkkkkk";
+                    break;
+                case 3: 
+                    estadosValt.Image = Properties.Resources.estado02;
+                    fraseEstadoValt.Text = "Eu esperava mais de você!!!";
+                    break;
+                case 4: 
+                    estadosValt.Image = Properties.Resources.estado03;
+                    fraseEstadoValt.Text = "Você não sabe o conceito básico!!!";
+                    break;
+                case 5: 
+                    estadosValt.Image = Properties.Resources.estado04;
+                    fraseEstadoValt.Text = "Desse jeito você nao vai passar!!!"; 
+                    break;
+                case 6: 
+                    estadosValt.Image = Properties.Resources.estado05; 
+                    fraseEstadoValt.Text = "Você é a vergonha da programação!!!";
+                    break;
+                //case 6: estadosValt.Image = Properties.Resources; break;
+            }
         }
     }
 }

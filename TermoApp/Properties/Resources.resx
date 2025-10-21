@@ -163,4 +163,22 @@
   <data name="valtemirVitoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\valtemirVitoria.mp4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="grafico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bar_chart_45dp_000000_FILL0_wght400_GRAD0_opsz48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado01" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estado01.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado02" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estado02.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado03" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estado03.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado04" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estado04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="estado05" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estado05.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
