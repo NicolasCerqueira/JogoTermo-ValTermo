@@ -251,6 +251,7 @@ namespace TermoApp
         private void btnEnter_Click(object sender, EventArgs e)
         {
             if (termo.valtBreak == true) this.Close();
+            if (termo.palavraAtual == tentativas) derrota();
             if (termo.palavraAtual > tentativas || coluna <= 5) return;
 
             var palavra = string.Empty;
@@ -281,14 +282,15 @@ namespace TermoApp
                     Settings.Default.VitoriasTotais++;
                     Settings.Default.SequenciaAtual++;
 
-                    MessageBox.Show("Parabéns você passou pelo Valtermir," +
+                    /*MessageBox.Show("Parabéns você passou pelo Valtermir," +
                                     " nos veremos semestre que vem!",
                                     "VelTermo", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Exclamation);
+                                    MessageBoxIcon.Exclamation);*/
 
-                    FormVitoria formValt = new FormVitoria();
-                    tentativas = termo.palavraAtual - 1;
-                    formValt.Show();
+                    //FormVitoria formValt = new FormVitoria();
+                    //tentativas = termo.palavraAtual - 1;
+                    //formValt.Show();
+                    vitoria();
                 }
                 else
                 {
@@ -309,7 +311,7 @@ namespace TermoApp
                 var nomeButton = $"btn{linha}{1}";
                 var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
                 corDestaqueClaro(buttonTabuleiro);
-                for (int i = 0; i <= 2; i++) Valt_Click(sender, e);
+                //for (int i = 0; i <= 2; i++) Valt_Click(sender, e);
             }
         }
 
@@ -421,6 +423,8 @@ namespace TermoApp
             btn64.Enabled = true;
             btn65.Enabled = true;
             dica.Enabled = true;
+            estadosValt.Image = null;
+            fraseEstadoValt.Text = "";
         }
 
         private void FormJogo_KeyPress(object sender, KeyPressEventArgs e)
@@ -627,6 +631,22 @@ namespace TermoApp
         private void FecharJogo_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void vitoria()
+        {
+            MessageBox.Show("Parabéns você passou pelo Valtermir," +
+                                    " nos veremos semestre que vem!",
+                                    "VelTermo", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Exclamation);
+
+            FormVitoria formValt = new FormVitoria();
+            tentativas = termo.palavraAtual - 1;
+            formValt.Show();
+        }
+        private void derrota()
+        {
+            FormDerrota derrota = new FormDerrota();
+            derrota.Show();
         }
         private void estadoValt()
         {
