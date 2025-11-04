@@ -1087,10 +1087,12 @@ partial class FormJogo
         FecharJogo.BackColor = Color.Transparent;
         FecharJogo.FlatAppearance.BorderSize = 0;
         FecharJogo.FlatStyle = FlatStyle.Flat;
+        FecharJogo.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
         FecharJogo.Location = new Point(1879, 0);
         FecharJogo.Name = "FecharJogo";
         FecharJogo.Size = new Size(25, 25);
         FecharJogo.TabIndex = 0;
+        FecharJogo.Text = "X";
         FecharJogo.UseVisualStyleBackColor = false;
         FecharJogo.Click += FecharJogo_Click;
         // 

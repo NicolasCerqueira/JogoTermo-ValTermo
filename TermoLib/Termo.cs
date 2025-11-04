@@ -88,18 +88,17 @@
 
             for (int i = 0; i < 5; i++)
             {
-                if (coresDaRodada[i] == 'V')
+                if (coresDaRodada[i] != 'V')
                 {
-                    continue;
-                }
-
-                for (int j = 0; j < 5; j++)
-                {
-                    if (palavra[i] == palavraSorteada[j] && !palavraSorteadaUsada[j])
+                    bool achou = false; 
+                    for (int j = 0; j < 5 && !achou; j++)
                     {
-                        coresDaRodada[i] = 'A';
-                        palavraSorteadaUsada[j] = true;
-                        break;
+                        if (palavra[i] == palavraSorteada[j] && !palavraSorteadaUsada[j])
+                        {
+                            coresDaRodada[i] = 'A';
+                            palavraSorteadaUsada[j] = true;
+                            achou = true; 
+                        }
                     }
                 }
             }
@@ -143,7 +142,6 @@
         public bool palavraValida(string palavra)
         {
             // Verifica se a lista de palavras carregada contém a palavra digitada.
-            // (Isso assume que a palavra e a lista estão na mesma caixa, ex: TUDO MAIÚSCULO)
             return palavras.Contains(palavra);
         }
 

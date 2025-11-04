@@ -19,6 +19,7 @@ namespace TermoApp
         public LibVLC _libVLC;
         public MediaPlayer _mediaPlayer;
 
+        public int jogos=0;
 
         public FormJogo()
         {
@@ -251,8 +252,8 @@ namespace TermoApp
         private void btnEnter_Click(object sender, EventArgs e)
         {
             if (termo.valtBreak == true) this.Close();
-            if (termo.palavraAtual == tentativas) derrota();
-            if (termo.palavraAtual > tentativas) return;//|| coluna <= 5
+            if (termo.palavraAtual > tentativas) return;
+
             if (coluna <= 5)
             {
                 MessageBox.Show("A palavra deve ter 5 letras.",
@@ -275,7 +276,9 @@ namespace TermoApp
                 return;
             }
 
-            termo.ChecaPalavra(palavra);
+            bool eraUltimaTentativa = (termo.palavraAtual == tentativas);
+
+            termo.ChecaPalavra(palavra); 
 
             if (termo.valtBreak == true)
             {
@@ -286,36 +289,25 @@ namespace TermoApp
             AtualizaTabuleiro();
             coluna = 1;
             if (!termo.JogoFinalizado) estadoValt();
-            if (termo.JogoFinalizado)
+
+            if (termo.JogoFinalizado) // Se JogoFinalizado é true
             {
                 Settings.Default.JogosTotais++;
-
-                if (palavra.ToUpper() == termo.palavraSorteada.ToUpper())
-                {
-                    Settings.Default.VitoriasTotais++;
-                    Settings.Default.SequenciaAtual++;
-
-                    /*MessageBox.Show("Parabéns você passou pelo Valtermir," +
-                                    " nos veremos semestre que vem!",
-                                    "VelTermo", MessageBoxButtons.OK,
-                                    MessageBoxIcon.Exclamation);*/
-
-                    //FormVitoria formValt = new FormVitoria();
-                    //tentativas = termo.palavraAtual - 1;
-                    //formValt.Show();
-                    vitoria();
-                }
-                else
-                {
-                    Settings.Default.Derrotas++;
-                    Settings.Default.SequenciaAtual = 0;
-
-                    MessageBox.Show($"Você perdeu", "VelTermo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                Settings.Default.VitoriasTotais++;
+                Settings.Default.SequenciaAtual++;
+                vitoria(); // Chama o formulário de vitória
 
                 Settings.Default.Save();
-
                 termo.JogoFinalizado = false;
+            }
+            else if (eraUltimaTentativa)
+            {
+                Settings.Default.JogosTotais++; 
+                Settings.Default.Derrotas++;
+                Settings.Default.SequenciaAtual = 0;
+                Settings.Default.Save();
+
+                derrota(); 
             }
 
             if (termo.palavraAtual <= tentativas)
@@ -324,7 +316,6 @@ namespace TermoApp
                 var nomeButton = $"btn{linha}{1}";
                 var buttonTabuleiro = (Button)Controls.Find(nomeButton, true)[0];
                 corDestaqueClaro(buttonTabuleiro);
-                //for (int i = 0; i <= 2; i++) Valt_Click(sender, e);
             }
         }
 
@@ -479,7 +470,7 @@ namespace TermoApp
             btn63.Enabled = false;
             btn64.Enabled = false;
             btn65.Enabled = false;
-            for (int i = 0; i <= 3; i++) Valt_Click(null, null);
+            //for (int i = 0; i <= 3; i++) Valt_Click(null, null);
             btn61.Text = "B";
             btn62.Text = "R";
             btn63.Text = "E";
@@ -685,7 +676,6 @@ namespace TermoApp
                     estadosValt.Image = Properties.Resources.estado05; 
                     fraseEstadoValt.Text = "Você é a vergonha da programação!!!";
                     break;
-                //case 6: estadosValt.Image = Properties.Resources; break;
             }
         }
     }

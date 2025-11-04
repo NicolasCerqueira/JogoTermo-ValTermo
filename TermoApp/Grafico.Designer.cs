@@ -42,7 +42,7 @@
             // 
             JogosTexto.AutoSize = true;
             JogosTexto.Font = new Font("Segoe UI", 25F);
-            JogosTexto.Location = new Point(28, 135);
+            JogosTexto.Location = new Point(52, 135);
             JogosTexto.Name = "JogosTexto";
             JogosTexto.Size = new Size(132, 46);
             JogosTexto.TabIndex = 0;
@@ -52,7 +52,7 @@
             // 
             VitoriasPctTexto.AutoSize = true;
             VitoriasPctTexto.Font = new Font("Segoe UI", 25F);
-            VitoriasPctTexto.Location = new Point(228, 135);
+            VitoriasPctTexto.Location = new Point(254, 135);
             VitoriasPctTexto.Name = "VitoriasPctTexto";
             VitoriasPctTexto.Size = new Size(183, 46);
             VitoriasPctTexto.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             SequenciaTexto.AutoSize = true;
             SequenciaTexto.Font = new Font("Segoe UI", 25F);
-            SequenciaTexto.Location = new Point(475, 135);
+            SequenciaTexto.Location = new Point(511, 135);
             SequenciaTexto.Name = "SequenciaTexto";
             SequenciaTexto.Size = new Size(341, 46);
             SequenciaTexto.TabIndex = 2;
@@ -72,7 +72,7 @@
             // 
             DerrotasTexto.AutoSize = true;
             DerrotasTexto.Font = new Font("Segoe UI", 25F);
-            DerrotasTexto.Location = new Point(864, 135);
+            DerrotasTexto.Location = new Point(895, 135);
             DerrotasTexto.Name = "DerrotasTexto";
             DerrotasTexto.Size = new Size(149, 46);
             DerrotasTexto.TabIndex = 3;
